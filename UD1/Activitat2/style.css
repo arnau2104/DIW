@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 15px;
+}
+
+/*Movil*/
+/*@media screen and (max-width: 767px) {*/
+
+    header {
+        background-color: #434960;
+        display: flex;
+        color: #CAD178;
+        height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        margin-left: 5px;
+    }
+
+    .nav-primary {
+        display: none;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .logo-square {
+        display: none;
+        
+    }
+
+    .nav-icons {
+        display: flex;
+        gap: 10px;
+        margin-right: 10px;
+    }
+
+    .logo-landscape {
+        width: 120px;
+        height: 30px;
+        margin-left: 20px;
+    }
+
+    aside nav{
+        background-color: #CAD178;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        
+    }
+
+    aside nav a {
+       margin-bottom: 10px;
+       margin-left: 5px;
+       color:#252323;
+       text-decoration: none;
+       
+       
+    }
+
+    aside nav a:hover {
+        font-weight: bold;
+    }
+
+    .products-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        background-color:  #95818D;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #252323 ;
+        
+    }
+
+    .item:hover {
+        opacity: 80%;
+    }
+/*}*/
+
+/*Tablet*/
+@media screen and (min-width: 768px) {
+
+    header {
+         height: 100px;
+    }
+
+.products-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+
+
+.nav-text {
+   display: inline-block
+}
+
+.logo-square {
+    display: flex;
+    width: 100px;
+    height: 80px;
+    margin-left: 20px;
+    
+}
+
+.logo-landscape {
+    display: none;
+}
+
+}
+
+/*Ordenador*/
+@media screen and (min-width: 992px) {
+
+    .nav-primary {
+        display: flex;
+        gap: 10px;
+    }
+
+    .fa-bars {
+        display: none;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 0;
+       
+    }
+
+    main nav {
+        height: 100vh;
+        width: 200px;
+        background-color: #CAD178;
+        display: flex;
+        justify-content: flex-end;
+
+       
+       
+    }
+
+   
+
+  
+
+  
+}
+
