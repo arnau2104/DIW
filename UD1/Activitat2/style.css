@@ -1,7 +1,17 @@
+
+@font-face {
+    font-family: Apple;
+    src:url("./System San Francisco Display Regular.ttf");
+   }
+   
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   font-family: Apple;
+ 
 }
 
 main {
@@ -142,6 +152,7 @@ main {
     .nav-primary {
         display: flex;
         gap: 10px;
+        margin-left: 15px;
     }
 
     .fa-bars {
@@ -151,20 +162,35 @@ main {
     main {
         display: flex;
         flex-direction: row-reverse;
-        margin: 0;
+        margin: 0px;
+        justify-content: flex-end;
+      
        
     }
 
-    main nav {
+    aside {
         height: 100vh;
         width: 200px;
         background-color: #CAD178;
         display: flex;
+        flex-direction: column;
         justify-content: flex-end;
+    }
 
+    main nav {
+        display: flex;
+        justify-content: space-between; 
        
        
     }
+
+    .products-container {
+      width: 100%;
+       
+        
+    }
+
+  
 
    
 
