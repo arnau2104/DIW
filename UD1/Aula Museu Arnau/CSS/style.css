@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Mobil*/
+
+body {
+    background-color: #FFF8F0;
+}
+
+header {
+    background-color: #001E33;
+    color: #FFF8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.nav-pc {
+    display: none;
+}
+
+.fa-bars {
+    font-size: 30px;
+}
+
+.fa-user {
+    font-size: 30px;
+}
+
+
+/* PC*/
+@media screen and (min-width: 650px) {
+}
