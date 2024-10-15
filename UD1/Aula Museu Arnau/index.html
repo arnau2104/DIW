@@ -10,17 +10,23 @@
 <body>
     <header>
         <i class="fa fa-bars mobile-menu" aria-hidden="true"></i>
-        <img src="./Assets/Imgs/logo_fosc.png" alt="" class="logo">
-        <nav class="nav-pc">
-            <h1>Aula Museu</h1>
-            <h2>Historia de la balena</h2>
-            <h2>Montatge de la balena</h2>
-            <h2>Noticies</h2>
-            <h2>Al voltant de la balena</h2>
-        </nav>
+        <div class="logo-pageTitle">
+            <a href="./index.html"><img src="./Assets/Imgs/logo_fosc.png" alt="" class="logo"></a>
+        <!-- <nav class="nav-pc"> -->
+            <h1 id="page-title" class="header-pc">Aula Museu</h1>
+        </div>
+        <div class="user-pc-menu">
+            <div class="header-pc pc-menu">
+                <a href="./Pages/Historia_balena.html"><p>Història de la balena</p></a>
+                <a href="/Pages/Muntatge_balena.html"><p>Muntatge de la balena</p></a>
+                <p>Notícies</p>
+                <p>Al voltant de la balena</p>
+            </div>
+        <!-- </nav> -->
         <i class="fa fa-user" aria-hidden="true"></i>
+    </div>
         <div id="menu-click">
-            <i class="fa fa-times" aria-hidden="true"></i>
+            <i class="fa fa-times close-menu" aria-hidden="true"></i>
             <ul>
                 <a href="./Pages/Historia_balena.html"><li>Historia de la ballena</li></a>
                 <li>Muntatge de la balena</li>
@@ -29,6 +35,7 @@
             </ul>
         </div>
         <div class="user-menu-click">
+            <i class="fa fa-times close-menu-user" aria-hidden="true"></i>
             <ul>
                 <li>Iniciar Sessió</li>
                 <li>Pagina d'Administració</li>
@@ -36,11 +43,12 @@
         </div>
     </header>
     <main>
+        <div class="whale">
         <div class="whale-skeleton">
             <iframe title="Blue whale skeleton" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/8502dbef80ed4aa688c13c90cb14de73/embed"> </iframe> 
         </div>
         <div class="text-history-whale">
-            <h2>Historia de la ballena</h2>
+            <h2>Història de la ballena</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nemo nostrum aperiam. Vero totam nulla molestias dicta, eum tempore molestiae nesciunt blanditiis saepe enim temporibus? Atque laudantium magni dicta fugiat!
             Debitis beatae velit, nam ullam consectetur dolorem unde magni omnis quia quisquam porro saepe praesentium obcaecati nihil est veritatis distinctio corrupti quibusdam sequi quae laudantium. Mollitia reiciendis repellat id architecto!
             Quis magnam non sit ipsa! Nihil dignissimos tempore sit ad explicabo quo repudiandae alias tempora dolor, corrupti harum, accusamus necessitatibus aliquid dolorum minima, temporibus odit eligendi incidunt excepturi corporis. Ipsum?
@@ -49,6 +57,7 @@
             </p>
             <a href="./Pages/Historia_balena.html"><button class="btnFull-history" >Historia Completa</button></a>
         </div>
+    </div>
         <div class="popular-news">
             <h2>Noticies Populars</h2>
             <img src="./Assets/Imgs/trastall_balena.JPG">
