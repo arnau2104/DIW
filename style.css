@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFF8F0;
+    color: #00171F;
+}
+
+header {
+    background-color: #001e33;
+    height:  100px;
+    color: #FFF8F0;
+    display: flex;
+   
+}
+
+h3 {
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+   
+}
+
+h3:hover {
+   
+    background-color: #FF8811;
+    padding: 5px;
+    height: 30px;
+    color: #00171F;
+   
+}
+
+button {
+    margin: 15px;
+    background-color: #001e33;
+    color: #FFF8F0;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.logo {
+    width: 90px;
+}
+
+.fa-user-circle {
+    color: #FFF8F0;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    width: 250px;
+    height: 20px;
+    color: #00171F;
+    border-color: #00171F;
+}
