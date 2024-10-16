@@ -1,7 +1,21 @@
+main {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 .div-form {
-    border: 1px solid black;
+    border: 1px solid #001E33;
     margin: 10px;
     border-radius: 5px;
+    width: calc(100vW - 20px);
+    
 }
 
 .div-form h2 {
@@ -11,5 +25,25 @@
 form {
     display: flex;
     flex-direction: column;
+    margin: 10px;
 }
 
+.div-form input[type="text"] {
+    width: calc(80% - 20px);
+    height: 25px;
+    border-radius: 2px solid #001E33;
+    margin-bottom: 5px;
+}
+
+.div-form input[type="email"] {
+    width: calc(80% - 20px);
+    height: 25px;
+    border-radius: 2px solid #001E33;
+}
+
+.div-form input[type="submit"] {
+    background-color: #001E33;
+    color: #FFF8F0;
+    border-radius: 2px solid #001E33;
+    margin-top: 10px;
+}
