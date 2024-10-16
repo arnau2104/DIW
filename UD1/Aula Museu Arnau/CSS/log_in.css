@@ -5,11 +5,11 @@ main {
     height: 100%;
 }
 
-/* footer {
+ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-} */
+} 
 
 .div-form {
     /*border: 1px solid #001E33;*/
@@ -17,6 +17,7 @@ main {
     border-radius: 5px;
     width: calc(100vW - 20px);
     margin-top: 50px;
+    min-height: 80px;
     
 }
 
@@ -67,3 +68,4 @@ form label {
     flex-direction: column;
 
 }
+
