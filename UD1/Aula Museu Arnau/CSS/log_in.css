@@ -5,11 +5,11 @@ main {
     height: 100%;
 }
 
-/* footer {
+ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-} */
+} 
 
 .div-form {
     /*border: 1px solid #001E33;*/
@@ -17,6 +17,7 @@ main {
     border-radius: 5px;
     width: calc(100vW - 20px);
     margin-top: 50px;
+    min-height: 80px;
     
 }
 
@@ -68,6 +69,9 @@ form label {
 
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 750px) {
    
 }
+=======
+>>>>>>> 0d959cdd4a795b8b11f98e35bd6b66932b42de7b
