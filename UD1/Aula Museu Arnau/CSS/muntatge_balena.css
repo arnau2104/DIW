@@ -35,6 +35,10 @@ footer {
     font-weight: bold;
 }
 
+.column img {
+    border-radius: 10px;
+}
+
 /*Inermedium*/
 @media screen and (min-width: 700px) and (max-width: 1000px) {
 

@@ -315,6 +315,15 @@ footer {
     padding-left: 4px;
 }
 
+.submenu {
+    display: none;
+}
+
+.voltant-balena:hover + .submenu{
+    display: flex;
+    flex-direction: column;
+}
+
 
 }
 
