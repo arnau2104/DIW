@@ -25,13 +25,11 @@ footer {
     display: none;
 }
 
-.column img:hover {
-    scale: 1.10;
-}
+
 
 .column img:hover + .hidden {
     display: block;
-    margin-top: 10px;
+    margin-top: 33px;
     font-weight: bold;
 }
 
@@ -39,9 +37,38 @@ footer {
     border-radius: 10px;
 }
 
+/* Growh Shadow Animation*/
+.column img:hover {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 5px #001E33;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+  }
+  .column img:hover:hover, .column img:hover:focus, .column img:hover:active {
+    box-shadow: 0 10px 10px -10px #001E33;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  } 
+
+  /*Shadow end*/
+  
+ 
+
+
+
 /*Inermedium*/
 @media screen and (min-width: 700px) and (max-width: 1000px) {
 
+ 
+    .logo-pageTitle h2 {
+        display: none;
+    }
+  
     .column {
         flex: 33%;
     }
@@ -51,9 +78,7 @@ footer {
         padding-left: 50px;
         padding-right: 50px;
     }
-    .column img:hover {
-        scale: 1.10;
-    }
+    
 
 }
 
@@ -68,9 +93,22 @@ footer {
         padding-right: 100px;
     }
 
-    .column img:hover {
-        scale: 1.10;
-    }
+   
 
 }
 
+@media screen and (max-width: 860px){
+    .logo-pageTitle {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-pageTitle h2 {
+        padding: 8px;
+    }
+    
+    header {
+        display: flex;
+        align-items: flex-start;
+    }
+    } 

@@ -12,17 +12,23 @@
     <header>
         <i class="fa fa-bars mobile-menu" aria-hidden="true"></i>
         <div class="logo-pageTitle">
-            <a href="../index.html"><img src="/Assets/Imgs/logo_fosc.png" alt="" class="logo"></a>
+            <a href="/index.html"><img src="/Assets/Imgs/logo_fosc.png" alt="" class="logo"></a>
        
             <h1 id="page-title" class="header-pc">Aula Museu</h1>
         </div>
         <div class="user-pc-menu">
             <div class="header-pc pc-menu">
-                <a href="/Pages/Historia_balena.html"><p>Història de la balena</p></a>
-                <a href="/Pages/Muntatge_balena.html"><p>Muntatge de la balena</p></a>
-                <a href="#"><p>Notícies</p></a>
-                <a href="#"><p>Al voltant de la balena</p></a>
-                <a href="#"><p>Pagina d'Administració</p></a>
+                <ul class="horitzontal-menu">
+                <li><a href="/Pages/Historia_balena.html"><p>Història de la balena</p></a></li>
+                <li><a href="/Pages/Muntatge_balena.html" ><p>Muntatge de la balena</p></a></li>
+                <li><a href="#"><p>Notícies</p></a></li>
+               <li> <a href="#" class="voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></p></a>
+                    <ul class="submenu"> 
+                        <li><a href="#">Fitxa Tècnica</li></a>
+                        <li><a href="#">Altres Activitats</li></a>
+                    </ul></li>
+               <li> <a href="#"><p>Pàgina d'Administració</p></a></li>
+                </ul>
             </div>
        
             <a href="/Pages/Log_in.html"> <i class="fa fa-user" aria-hidden="true"></i></a>
@@ -34,7 +40,7 @@
                 <a href="/Pages/Muntatge_balena.html"><li>Muntatge de la balena</li></a>
                 <li>Noticies</li>
                 <li>Al voltant de la balena</li>
-                <li>Pagina d'Administració</li>
+                <li>Pàgina d'Administració</li>
             </ul>
         </div>
     </header>
@@ -47,11 +53,11 @@
                     <input type="email" name="email" id="email">
                 </div>
                 <div class="password">
-                <label for="password">Contrassenya</label>
+                <label for="password">Contrssenya</label>
                 <input type="text" name="password" id="password">
-                <p>Has olvidat la contrassenya?</p>
+                <a href="#"><p>Has oblidat la contrasenya?</p></a>
                 </div>
-                <input type="submit" value="Enviar" name="submit" id="submit">
+                <input type="submit" value="Iniciar Sessió" name="submit" id="submit">
             </form>
        </div>
     </main>

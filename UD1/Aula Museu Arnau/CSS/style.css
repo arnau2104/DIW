@@ -3,6 +3,22 @@
     src:url("../Assets/fonts/System\ San\ Francisco\ Display\ Regular.ttf");
    }
    
+/*Animacions*/
+/*Icon hamg*/
+@keyframes hvr-icon-hang {
+    0% {
+      -webkit-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+    50% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+  }
 
 
 * {
@@ -16,7 +32,7 @@
 /*Móbil*/
 
 body {
-    background-color: #FFF8F0;
+     background-color: #FFF8F0; 
     color: #00171F;
 }
 
@@ -84,10 +100,10 @@ footer {
 
 .btnFull-history {
     margin-top: 10px;
-    background-color: #001E33;
+     background-color: #001E33; 
     color: #FFF8F0;
     border-radius: 5px;
-    width: 150px;
+    width: 200px;
     height: 40px;
 }
 
@@ -111,7 +127,7 @@ footer {
 
 #menu-click.active {
     display: block;
-    background-color: #FF8811;
+    background-image: linear-gradient(to bottom, #FF8811 60%, #FFF8F0 );
     color: #00171F;
     position: absolute;
     left: 0;
@@ -195,17 +211,17 @@ footer {
 }
 
 #actual-page {
-    text-decoration: none; /* Desactivamos el subrayado por defecto */
-    box-shadow: 0 2px 0px #FFF8F0; /* Ajusta el valor de 2px para más o menos distancia */
+    text-decoration: none; 
+    box-shadow: 0 2px 0px #FFF8F0; 
 }
 
 
 
 /* PC*/
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 860px) {
 
     header {
-        height: 100px;
+        height: 158px;
     }
 
     .mobile-menu {
@@ -313,22 +329,92 @@ footer {
 
 .fa-chevron-down {
     padding-left: 4px;
+    animation: hang 2s ease-in-out infinite;
+      transform-origin: top center;
 }
 
-.submenu {
-    display: none;
-}
+
 
 .voltant-balena:hover + .submenu{
     display: flex;
     flex-direction: column;
 }
 
+.horitzontal-menu {
+    display: flex;
+    justify-content: space-around;
+}
 
+.horitzontal-menu > li >a {
+    display: block;
+    padding: 15px 20px;
+}
+
+.horitzontal-menu > li {
+    list-style: none;
+}
+
+.horitzontal-menu  li a:hover {
+    background-color: #FF8811;
+    color: #00171F;
+}
+.submenu {
+    display: none;
+}
+.submenu {
+    position: absolute;
+    width: 200px;
+}
+
+.submenu li {
+    list-style: none;
+}
+
+.horitzontal-menu li:hover .submenu {
+    display: block;
 }
 
 
-@media screen and (min-width: 701px) and   (max-width: 1200px) {
+  .icon-hang {
+    animation: hvr-icon-hang 2s ease-in-out infinite;
+  }
+
+/* Underline From Center Animatio */
+.text-history-whale h2 {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  .text-history-whale h2:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #001E33;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .text-history-whale h2:hover:before, .text-history-whale h2:focus:before, .text-history-whale h2:active:before {
+    left: 0;
+    right: 0;
+  }
+
+  /*Animation end*/
+
+}
+
+@media screen and (min-width: 861px) and   (max-width: 1200px) {
     .header-pc {
         font-size: 15px;
     }
