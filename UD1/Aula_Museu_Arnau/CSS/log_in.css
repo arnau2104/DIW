@@ -1,0 +1,149 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #001E33;
+}
+
+ footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+} 
+
+.div-form {
+    margin: 10px;
+    border-radius: 5px;
+    width: 80%;
+    margin-top: 50px;
+    min-height: 80px;
+    box-shadow: 2px 3px 7px #001E33;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.div-form h2 {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;  
+    margin-left: 25px;
+    margin-bottom: 15px; 
+    padding: 10px;  
+   
+}
+
+form label {
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+.div-form input[type="text"] {
+    width: 100%;
+    height: 25px;
+    border: 3ps solid #001E33;
+    border-radius: 5px ;
+    margin-bottom: 5px;
+}
+
+.div-form input[type="email"] {
+    width: 100%;
+    height: 25px;
+    border: 2px solid #001E33;
+    border-radius: 5px ;
+}
+
+.div-form input[type="submit"] {
+    background-color: #001E33;
+    color: #FFF8F0;
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#submit {
+    border-radius: 5px;
+}
+
+#submit:hover {
+    scale: 1.15;
+}
+
+.password p {
+    font-weight: bold;
+}
+
+.password p:hover {
+    scale: 1.10;
+}
+
+
+@media screen and (min-width: 750px) {
+
+    .div-form {
+        width: 45%;
+       align-content: center;
+    }
+
+
+    .password {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .div-form input[type="text"] {
+        height: 30px;
+        width: 100%;
+    }
+
+    .div-form input[type="email"] {
+        margin-bottom: 20px;
+        width: 100%;
+        height: 30px;
+    }
+
+    #submit {
+        width: 100%;
+        height: 40px;
+        border-radius: 8px;
+        font-size: 30px;
+    }
+
+    form label {
+        font-size: 40px;
+    }
+
+    footer {
+        height: 50px;
+    }
+
+    .div-form h2 {
+        font-size: 55px;
+    }
+}
+
