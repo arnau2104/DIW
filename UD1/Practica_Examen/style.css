@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: orange;
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   padding: 30px 20px;
+   align-items: baseline;
+   box-shadow:100px 5px 20px  black;
+}
+
+header h1 {
+    text-align: end;
+    padding-right: 50px;
+    text-shadow: 0px 1px 10px white;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+   padding: 0 20px;
+
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+header button {
+    width: 200px;
+    height: 40px;
+    display: grid;
+    align-content: center;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 2s ease, transform 2s ease; 
+    
+}
+
+/* Cuando el ratón pasa sobre el botón */
+button:hover {
+    background-color: red; /*Cambio de color con transición suave */
+    transform: translateY(-20px) ;
+}
+

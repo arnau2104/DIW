@@ -32,6 +32,8 @@ footer {
     text-align: center;
     width: 100%;
     grid-area: footer;
+    position: fixed;
+    bottom: 0 ;
 }
 
 .container {
@@ -58,24 +60,31 @@ main {
 
 #subcontenido {
     background-color: #F67E7D;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-     width: 100%; 
-     padding: 10px 0;
-     height: 200px;
-     justify-content: center;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    width: 100%; 
+    padding: 10px 0;
+    height: 300px;
+    justify-content: center;
+    column-gap: 20px;
+    text-align: center;
 }
 
 #subcontenido div {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-row: 2;
+    
+}
+
+#subcontenido > span:first-child {
+    grid-column: 1 / span 3;
 }
 
 main div {
     background-color: #5B5750;
-     width: 200px;
-    height: 175px; 
+     width: 250px;
+    height: 105px; 
+    text-align: center;
 }
 
 main section:first-child {
@@ -92,6 +101,20 @@ main section:first-child {
     gap: 20px;
 }
 
-.subcontenido div {
+
+aside  {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+aside ul {
+    padding: 5px;
+    margin-left: 15px;
+}
+
+img {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
 }
