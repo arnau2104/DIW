@@ -1,10 +1,17 @@
+@import 'common.scss';
+
+@mixin inputStyle($borderColor,$borderRadius) {
+    border: 3px solid $borderColor;
+    border-radius: 5px ;
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    color: #001E33;
+    color: $blue;
 }
 
  footer {
@@ -20,7 +27,7 @@ main {
     width: 80%;
     margin-top: 50px;
     min-height: 80px;
-    box-shadow: 2px 3px 7px #001E33;
+    box-shadow: 2px 3px 7px $blue;
     display: flex;
     justify-content: center;
     
@@ -51,21 +58,20 @@ form label {
 .div-form input[type="text"] {
     width: 100%;
     height: 25px;
-    border: 3px solid #001E33;
-    border-radius: 5px ;
+    @include inputStyle($blue,5px);
     margin-bottom: 5px;
+   
 }
 
 .div-form input[type="email"] {
     width: 100%;
     height: 25px;
-    border: 3px solid #001E33;
-    border-radius: 5px ;
+    @include inputStyle($blue,5px);
 }
 
 .div-form input[type="submit"] {
-    background-color: #001E33;
-    color: #FFF8F0;
+    background-color: $blue;
+    color: $white;
     margin-top: 15px;
     width: 100%;
     height: 40px;
@@ -146,4 +152,5 @@ form label {
         font-size: 55px;
     }
 }
+
 

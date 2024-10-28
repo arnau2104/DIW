@@ -1,0 +1,22 @@
+$white: #FFF8F0;
+$blue: #001E33;
+$black: #00171F;
+$orange: #FF8811;
+
+@mixin upDownAnimation() {
+    @keyframes hvr-icon-hang {
+        0% {
+          -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+        }
+        50% {
+          -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+        }
+        100% {
+          -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+        }
+      }
+}
+

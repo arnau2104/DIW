@@ -73,6 +73,10 @@ footer {
     margin-right: 8px;
 }
 
+
+/* fet fins aqui de moment, common.scss de moment */
+
+/*index.scss*/
 .whale-skeleton {
     display: flex;
     justify-content: center;
@@ -100,7 +104,7 @@ footer {
 
 .btnFull-history {
     margin-top: 10px;
-     background-color: #001E33; 
+    background-color: #001E33; 
     color: #FFF8F0;
     border-radius: 5px;
     width: 200px;
@@ -120,7 +124,9 @@ footer {
     width: 250px;
     height: 200px;
 }
+/*end index.scss*/
 
+/*common sccs*/
 #menu-click {
     display: none;
 }
@@ -214,12 +220,12 @@ footer {
     text-decoration: none; 
     box-shadow: 0 2px 0px #FFF8F0; 
 }
-
+/*end common sccs*/
 
 
 /* PC*/
 @media screen and (min-width: 860px) {
-
+    /*common.scss*/
     header {
         height: 158px;
     }
@@ -248,7 +254,9 @@ footer {
         height: 100px;
         width: 80px;
     }
+    /*end common.scss*/
 
+    /*index.scss*/
     .whale {
         margin-top: 25px;
         display: flex;
@@ -280,12 +288,15 @@ footer {
     margin-top: 25px;
     font-size: 20px;
    }
+   /*end index.scss*/
 
+   /*common.scss*/
    .pc-menu {
     display: flex;
     gap: 25px;
    }
 
+   /*index.scss*/
    .text-history-whale  h2 {
     margin-bottom: 5px;
     font-size: 30px;
@@ -299,7 +310,9 @@ footer {
     width: 500px;
     height: 300px;
 }
+/*end index.scss*/
 
+/*common.scss*/
 .user-pc-menu {
     display: flex;
     align-items: center;
@@ -379,6 +392,9 @@ footer {
     animation: hvr-icon-hang 2s ease-in-out infinite;
   }
 
+  /*end common.scss*/
+
+  /*index.scss*/
 /* Underline From Center Animatio */
 .text-history-whale h2 {
     display: inline-block;
@@ -409,12 +425,13 @@ footer {
     left: 0;
     right: 0;
   }
-
   /*Animation end*/
+  /*end index.scss*/
 
 }
 
 @media screen and (min-width: 861px) and   (max-width: 1200px) {
+    /*comoon.scss*/
     .header-pc {
         font-size: 15px;
     }
