@@ -8,40 +8,19 @@
     height: $height;
 }
 
-@font-face {
-    font-family: Apple;
-    src:url("../Assets/fonts/System\ San\ Francisco\ Display\ Regular.ttf");
-   }
-   
-/*Animacions*/
-/*Icon hamg*/
-@keyframes hvr-icon-hang {
-    0% {
-      -webkit-transform: translateY(6px);
-      transform: translateY(6px);
-    }
-    50% {
-      -webkit-transform: translateY(2px);
-      transform: translateY(2px);
-    }
-    100% {
-      -webkit-transform: translateY(6px);
-      transform: translateY(6px);
-    }
-  }
-
+@include font-face($fontFamily);   
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   font-family: Apple;
+    font-family: $fontFamily;
  
 }
 
 body {
     background-color: $white; 
-   color: $black;
+    color: $black;
 }
 
 header {
@@ -79,6 +58,7 @@ footer {
     font-size: 30px;
     margin: 5px;
     margin-right: 8px;
+    color: $white;
 }
 
 #menu-click {
@@ -122,38 +102,6 @@ footer {
     
 }
 
-.user-menu-click {
-    display: none;
-}
-
-.user-menu-click.active {
-    display: block;
-    background-color: $orange;
-    color: $black;
-    position: absolute;
-    right: 0;
-    top: 1px;
-    width: 150px;
-    height: 160px;
-    text-align: center;  
-}
-
-.user-menu-click.active ul {
-    margin-top: 40px;
-}
-
-.user-menu-click.active li {
-    margin-left: 21px;
-    margin-top: 15px;
-}
-
-.close-menu-user {
-    float: right;
-    margin: 3px;
-    font-size: 25px;
-    margin-bottom: 150px;
-}
-
 .close-menu {
     float: left;
     margin: 3px;
@@ -161,18 +109,15 @@ footer {
     margin-bottom: 150px;
 }
 
-.user-pc-menu a {
-    color: $white;
-}
 
-.user-pc-menu a:hover {
-    font-weight: bold;
-    scale: 1.10;
-}
 
 #actual-page {
     text-decoration: none; 
     box-shadow: 0 2px 0px $white; 
+}
+
+img {
+    width: 100%;
 }
 
 
@@ -288,8 +233,8 @@ footer {
     }
     
     
-      .icon-hang {
-        animation: hvr-icon-hang 2s ease-in-out infinite;
+      .upDown {
+        @include upDownAnimation(2s,infinite);
       }
     
 

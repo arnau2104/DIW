@@ -27,11 +27,6 @@
 
 .btnFull-history {
     margin-top: 10px;
-    // background-color: #001E33; 
-    // color: #FFF8F0;
-    // border-radius: 5px;
-    // width: 200px;
-    // height: 40px;
     @include buttonStyle($blue,$white,200px,40px,5px);
 }
 
@@ -115,7 +110,7 @@
     left: 51%;
     right: 51%;
     bottom: 0;
-    background: #001E33;
+    background: $blue;
     height: 4px;
     -webkit-transition-property: left, right;
     transition-property: left, right;

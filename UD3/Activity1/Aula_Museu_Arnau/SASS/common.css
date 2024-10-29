@@ -2,19 +2,6 @@
   font-family: Apple;
   src: url("../Assets/fonts/System San Francisco Display Regular.ttf");
 }
-/*Animacions*/
-/*Icon hamg*/
-@keyframes hvr-icon-hang {
-  0% {
-    transform: translateY(6px);
-  }
-  50% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(6px);
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -60,6 +47,7 @@ footer {
   font-size: 30px;
   margin: 5px;
   margin-right: 8px;
+  color: #FFF8F0;
 }
 
 #menu-click {
@@ -101,38 +89,6 @@ a:visited {
   list-style: none;
 }
 
-.user-menu-click {
-  display: none;
-}
-
-.user-menu-click.active {
-  display: block;
-  background-color: #FF8811;
-  color: #00171F;
-  position: absolute;
-  right: 0;
-  top: 1px;
-  width: 150px;
-  height: 160px;
-  text-align: center;
-}
-
-.user-menu-click.active ul {
-  margin-top: 40px;
-}
-
-.user-menu-click.active li {
-  margin-left: 21px;
-  margin-top: 15px;
-}
-
-.close-menu-user {
-  float: right;
-  margin: 3px;
-  font-size: 25px;
-  margin-bottom: 150px;
-}
-
 .close-menu {
   float: left;
   margin: 3px;
@@ -140,18 +96,13 @@ a:visited {
   margin-bottom: 150px;
 }
 
-.user-pc-menu a {
-  color: #FFF8F0;
-}
-
-.user-pc-menu a:hover {
-  font-weight: bold;
-  scale: 1.1;
-}
-
 #actual-page {
   text-decoration: none;
   box-shadow: 0 2px 0px #FFF8F0;
+}
+
+img {
+  width: 100%;
 }
 
 /* PC*/
@@ -240,8 +191,19 @@ a:visited {
   .horitzontal-menu li:hover .submenu {
     display: block;
   }
-  .icon-hang {
+  .upDown {
     animation: hvr-icon-hang 2s ease-in-out infinite;
+  }
+  @keyframes hvr-icon-hang {
+    0% {
+      transform: translateY(6px);
+    }
+    50% {
+      transform: translateY(2px);
+    }
+    100% {
+      transform: translateY(6px);
+    }
   }
 }
 @media screen and (min-width: 861px) and (max-width: 1200px) {

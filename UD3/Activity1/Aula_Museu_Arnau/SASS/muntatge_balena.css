@@ -223,117 +223,93 @@ a:visited {
     font-size: 30px;
   }
 }
-.whale-skeleton {
-  display: flex;
-  justify-content: center;
+img {
   width: 100%;
-  margin-top: 10px;
 }
 
-.whale-skeleton iframe {
-  width: calc(100vH - 5px);
-  height: 250px;
-  margin-right: 5px;
-  margin-left: 5px;
+.row {
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
 }
 
-.text-history-whale {
-  text-align: center;
-  margin: 15px;
+.column {
+  flex: 50%;
+  padding: 5px;
 }
 
-.text-history-whale h2 {
-  margin-bottom: 5px;
+.column img {
+  margin-top: 5px;
 }
 
-.btnFull-history {
-  margin-top: 10px;
-  background-color: #001E33;
-  color: #FFF8F0;
-  border-radius: 5px;
-  width: 200px;
-  height: 40px;
+footer {
+  margin-top: 50px;
 }
 
-.popular-news {
-  text-align: center;
-  margin-top: 20px;
+.hidden {
+  display: none;
 }
 
-.popular-news h2:first-child {
-  margin-bottom: 5px;
+.column img:hover + .hidden {
+  display: block;
+  margin-top: 33px;
+  font-weight: bold;
 }
 
-.popular-news img {
-  width: 250px;
-  height: 200px;
+.column img {
+  border-radius: 10px;
 }
 
-/* PC*/
-@media screen and (min-width: 860px) {
-  .whale {
-    margin-top: 25px;
+/* Growh Shadow Animation*/
+.column img:hover {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 5px #001E33;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform;
+}
+
+.column img:hover:hover, .column img:hover:focus, .column img:hover:active {
+  box-shadow: 0 10px 10px -10px #001E33;
+  transform: scale(1.1);
+}
+
+/*Shadow end*/
+/*Inermedium*/
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .logo-pageTitle h2 {
+    display: none;
+  }
+  .column {
+    flex: 33%;
+  }
+  .row {
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (min-width: 1001px) {
+  .column {
+    flex: 25%;
+  }
+  .row {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .logo-pageTitle {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 100%;
+    text-align: center;
   }
-  .whale-skeleton {
-    height: 500px;
+  .logo-pageTitle h2 {
+    padding: 8px;
   }
-  .whale-skeleton iframe {
-    height: 100%;
-  }
-  .text-history-whale {
+  header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 10%;
-    padding-left: 10%;
+    align-items: flex-start;
   }
-  .btnFull-history {
-    width: 50%;
-    height: 50px;
-    margin-top: 25px;
-    font-size: 20px;
-  }
-  .text-history-whale h2 {
-    margin-bottom: 5px;
-    font-size: 30px;
-  }
-  .popular-news h2 {
-    font-size: 30px;
-  }
-  .popular-news img {
-    width: 500px;
-    height: 300px;
-  }
-  /* Underline From Center Animatio */
-  .text-history-whale h2 {
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    overflow: hidden;
-  }
-  .text-history-whale h2:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 51%;
-    right: 51%;
-    bottom: 0;
-    background: #001E33;
-    height: 4px;
-    transition-property: left, right;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-  }
-  .text-history-whale h2:hover:before, .text-history-whale h2:focus:before, .text-history-whale h2:active:before {
-    left: 0;
-    right: 0;
-  }
-  /*Animation end*/
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=muntatge_balena.css.map */
