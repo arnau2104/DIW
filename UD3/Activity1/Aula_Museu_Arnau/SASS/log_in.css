@@ -101,6 +101,10 @@ a:visited {
   box-shadow: 0 2px 0px #FFF8F0;
 }
 
+img {
+  width: 100%;
+}
+
 /* PC*/
 @media screen and (min-width: 860px) {
   header {

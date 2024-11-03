@@ -1,2 +1,129 @@
 @import 'common.scss';
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        text-align: center;
+        margin-top: 10px;
+        padding: 0px 10px;
+    }
+    .fitxes {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        padding-top: 20px;
+        @media screen and (min-width: 860px) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 55px;
+            padding-bottom: 50px;
+        }
+        
+
+        .fitxa {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows:20px auto;
+            grid-template-areas: 
+            "image-container bone-information"
+            " . bone-description";
+            justify-content: center;
+            gap: 10px;
+            height: 200px;
+            padding: 10px;
+
+            @media screen and (min-width: 860px) {
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto;
+                grid-template-areas: 
+                "bone-information"
+                "image-container"
+                "bone-description"
+                ;    
+                height: 100%;
+                background-color: white;
+                border-radius: 15px;
+                justify-items: center;
+                // width: 29%;
+                width: 475px;
+                box-shadow:  0 5px 12px $black;
+
+            }
+
+            .image-container {
+                 width: 140px;
+                 flex-grow: 0.5;
+                height: 200px;
+                grid-area: image-container;
+                 grid-row: 1 / span 2;
+                @media screen and (min-width: 860px) {
+                    grid-row: 2;
+                    width: 240px;
+                    height: 300px;
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 8px;
+                    height: 100%;
+                }
+            }
+
+             
+
+            .bone-information {
+                display: flex;
+                flex-direction: column;
+                grid-area: bone-information;
+
+                @media screen and (min-width: 860px) {
+                    width: 100%;
+                }
+
+                > p:first-child {
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 25px;
+
+                }
+
+                hr {
+                    margin-top: 5px;
+
+                }
+            }
+
+            .bone-description {
+                background-color: white;
+                padding: 15px 10px;
+                overflow-y: auto;
+                margin-top: 12px;
+                border: 1px solid $black;
+                border-radius: 5px;
+                grid-area: bone-description;
+            }
+
+            
+        }
+
+
+        > hr {
+            @media screen and (min-width: 860px) {
+               display: none;
+            } 
+        }
+        
+    }
+
+
+
+}
+
+@include mobile-page-title();
+
