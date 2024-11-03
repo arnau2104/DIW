@@ -1,4 +1,5 @@
 $white: #FFF8F0;
+$light-white: #FAF9F9;
 $blue: #001E33;
 $black: #00171F;
 $orange: #FF8811;
@@ -55,6 +56,8 @@ $fontFamily:Apple;
 }
 
 @mixin mobile-page-title() {
+  
+  
   @media screen and (max-width: 860px){
     .logo-pageTitle {
         display: flex;
@@ -69,5 +72,46 @@ $fontFamily:Apple;
         display: flex;
         align-items: flex-start;
     }
-    } 
+    }
+}
+
+@mixin buttonStyle($background-color,$color,$width,$height,$border-radius) {
+  background-color: $background-color; 
+  color: $color;
+  border-radius: $border-radius;
+  width: $width;
+  height: $height;
+}
+
+@mixin underline-from-center-animation($class,$color) {
+  /* Underline From Center Animatio */
+#{$class} {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+#{$class}:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: $color;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+#{$class}:hover:before, #{$class}:focus:before, #{$class}:active:before {
+  left: 0;
+  right: 0;
+}
+/*Animation end*/
 }
