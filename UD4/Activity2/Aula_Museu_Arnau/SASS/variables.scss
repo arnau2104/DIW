@@ -115,3 +115,37 @@ $fontFamily:Apple;
 }
 /*Animation end*/
 }
+
+@mixin func-dark-mode(){
+
+  background-color: $blue;
+  color: $white;
+
+  header {
+    background-color: $white;
+    color: $blue;
+  }
+
+  main  {
+    background-color: $blue;
+    color: $white;
+    @include buttonStyle($white,$blue);
+
+    #accesibilityIcon {
+      color: $white;
+    }
+   
+  }
+
+  footer {
+    background-color: $white;
+    color: $blue;
+  }
+
+ 
+}
+
+@mixin func-grey-scale(){
+  $blue: grayscale(80%);
+  $white: grayscale(80%);
+}

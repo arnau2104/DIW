@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./Assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./SASS/common.css">
     <link rel="stylesheet" href="./SASS/index.css">
+    <link rel="stylesheet" href="./SASS/accesibility.css">
     <link href="/Assets/Hover-master/css/hover.css" rel="stylesheet" media="all">
 </head>
 <body>
@@ -72,12 +73,12 @@
         </div>
 
         
-        <i class="fa fa-universal-access" aria-hidden="true"></i>
+        <i class="fa fa-universal-access" id="accesibilityIcon" aria-hidden="true"></i>
        
         <div class="accesibility">
-            <p>Acessibility</p>
-            <div class="contrast-colors">
-                <!-- <p>Contrast</p> -->
+            <p>Acessibility <i class="fa fa-times" aria-hidden="true"></i>
+            </p>
+            <div class="contrast-colors"> 
                 <div class="dark-contrast accesisility-buttons">
                     <i class="fa fa-moon-o" aria-hidden="true"></i>
                     Dark Contrast         
@@ -100,9 +101,8 @@
                 </div>
             </div>
 
-            <div class="font-settings">
-                <div class="change-font-size">
-                    <div class="font-size-slider">
+            <div class="font-settings">     
+                    <div class="font-size-slider ">
                         <h4>Font Size</h4>
                         <div>
                             <input type="range" min="1" max="10" id="sliderRange"><p id="rangeValue"></p>
@@ -137,7 +137,6 @@
                             <button id="letterSpacingExtraLarge" class=" accesisility-buttons">EXTRA LARGE</button>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
 

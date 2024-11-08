@@ -1,27 +1,29 @@
 let sliderRange = document.getElementById("sliderRange");
 let rangeValue = document.getElementById("rangeValue");
+let accesibilityIcon = document.getElementById("accesibilityIcon");
+let accesibility = document.querySelector(".accesibility");
+let close = document.querySelector(".accesibility .fa-times");
+let darkContrast = document.querySelector(".dark-contrast");
+
+accesibilityIcon.addEventListener('click' ,()=>{
+    accesibility.classList.toggle("active");
+});
+
+close.addEventListener('click', ()=>{
+    accesibility.classList.toggle("active");
+});
 
 rangeValue.innerText = sliderRange.value;
 
 sliderRange.oninput = function(){
-    // if(sliderRange.value= 1 ){
-    // rangeValue.innerText = "XS";
-    // };
-
-    // if(sliderRange.value= 2 ){
-    //     rangeValue.innerText = "S";
-    //     }
-
-    // if(sliderRange.value= 3 ){
-    //     rangeValue.innerText = "M";
-    // }
-
-    // if(sliderRange.value= 4 ){
-    //     rangeValue.innerText = "L";
-    //     }
-
-    //     if(sliderRange.value= 5 ){
-    //         rangeValue.innerText = "XL";
-    //         }
     rangeValue.innerText = sliderRange.value;
-}
+};
+
+darkContrast.addEventListener('click' , ()=>{
+
+    
+
+    document.body.classList.toggle("dark-mode");
+    accesibility.classList.toggle("active");
+  
+});

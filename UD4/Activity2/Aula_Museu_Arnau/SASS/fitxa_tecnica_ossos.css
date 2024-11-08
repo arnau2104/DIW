@@ -148,6 +148,10 @@ img {
 }
 
 .accesibility {
+  display: none;
+}
+
+.accesibility.active {
   background-color: #FFF8F0;
   width: 90%;
   height: 90%;
@@ -155,13 +159,25 @@ img {
   top: 0;
   border: 1px solid #001E33;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .accesibility > p {
   text-align: center;
   background-color: #001E33;
   color: #FAF9F9;
-  padding: 5px;
+  padding: 15px;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.accesibility .fa-times {
+  position: absolute;
+  right: 2px;
 }
 
 .contrast-colors {
@@ -173,10 +189,13 @@ img {
   justify-content: center;
 }
 
-.accesisility-buttons {
+.contrast-colors div {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+}
+
+.accesisility-buttons {
+  padding: 5px;
   text-align: center;
   background-color: #FAF9F9;
   border: 1px solid #001E33;
@@ -189,6 +208,64 @@ img {
 
 .low-saturation .fa-tint {
   color: lightgrey;
+}
+
+.font-size-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.font-size-slider div {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+#sliderRange {
+  width: 70%;
+}
+
+.line-spacing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  gap: 8px;
+}
+
+.line-spacing div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.line-spacing div button.accesisility-buttons {
+  height: 40px;
+  width: 70px;
+}
+
+.spacing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  gap: 8px;
+}
+
+.spacing div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.spacing div button.accesisility-buttons {
+  height: 40px;
+  width: 70px;
 }
 
 /* PC*/
