@@ -285,6 +285,11 @@ img {
 
 .dark-mode {
     @include func-dark-mode();
+ 
+}
+
+.high-saturation {
+    @include func-high-saturation();
 }
 
 

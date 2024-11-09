@@ -268,6 +268,59 @@ img {
   width: 70px;
 }
 
+.dark-mode {
+  background-color: #001E33;
+  color: #FFF8F0;
+}
+.dark-mode header {
+  background-color: #FFF8F0;
+  color: #001E33;
+}
+.dark-mode header .fa-user {
+  color: #001E33;
+}
+.dark-mode main {
+  background-color: #001E33;
+  color: #FFF8F0;
+}
+.dark-mode main button {
+  background-color: #FFF8F0;
+  color: #001E33;
+}
+.dark-mode main #accesibilityIcon {
+  color: #FFF8F0;
+}
+.dark-mode main .accesibility {
+  background-color: #001E33;
+  color: #FFF8F0;
+  border-color: #FFF8F0;
+}
+.dark-mode main .accesibility > p {
+  background-color: #FFF8F0;
+  color: #001E33;
+}
+.dark-mode main .accesibility .accesibility-buttons {
+  color: #001E33;
+}
+.dark-mode main .accesibility .contrast-colors {
+  color: #001E33;
+}
+.dark-mode main .bone-description {
+  color: #001E33;
+}
+.dark-mode main .div-form {
+  background-color: #FFF8F0;
+  color: #001E33;
+}
+.dark-mode footer {
+  background-color: #FFF8F0;
+  color: #001E33;
+}
+
+.high-saturation {
+  filter: saturate(200%);
+}
+
 /* PC*/
 @media screen and (min-width: 860px) {
   .logo-pageTitle h2 {

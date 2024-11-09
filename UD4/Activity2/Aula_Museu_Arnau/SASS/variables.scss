@@ -124,15 +124,52 @@ $fontFamily:Apple;
   header {
     background-color: $white;
     color: $blue;
+
+     .fa-user {
+      color: $blue;
+     }
   }
 
   main  {
     background-color: $blue;
     color: $white;
-    @include buttonStyle($white,$blue);
+    
+    button {
+      background-color: $white;
+      color: $blue;
+    }
 
     #accesibilityIcon {
       color: $white;
+    }
+
+    .accesibility {
+      background-color: $blue;
+      color: $white;
+      border-color: $white;
+
+      > p{
+        background-color: $white;
+        color: $blue;
+      }
+
+      .accesibility-buttons {
+        color: $blue;
+       
+      }
+
+       .contrast-colors {
+        color: $blue;
+       }
+    }
+
+    .bone-description {
+      color: $blue;
+    }
+
+    .div-form {
+      background-color: $white;
+      color: $blue;
     }
    
   }
@@ -148,4 +185,21 @@ $fontFamily:Apple;
 @mixin func-grey-scale(){
   $blue: grayscale(80%);
   $white: grayscale(80%);
+}
+
+@mixin func-high-saturation(){
+//  header{
+//   filter: saturate(200%);
+//  }
+
+//  main {
+//   filter: saturate(200%);
+//  }
+
+//  footer {
+//   filter: saturate(200%);
+//  }
+
+   filter: saturate(200%);
+
 }
