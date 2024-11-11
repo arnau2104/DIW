@@ -139,29 +139,6 @@ $fontFamily:Apple;
       color: $blue;
     }
 
-    #accesibilityIcon {
-      color: $white;
-    }
-
-    .accesibility {
-      background-color: $blue;
-      color: $white;
-      border-color: $white;
-
-      > p{
-        background-color: $white;
-        color: $blue;
-      }
-
-      .accesibility-buttons {
-        color: $blue;
-       
-      }
-
-       .contrast-colors {
-        color: $blue;
-       }
-    }
 
     .bone-description {
       color: $blue;
@@ -179,13 +156,33 @@ $fontFamily:Apple;
     color: $blue;
   }
 
+  #accesibilityIcon {
+    color: $white;
+  }
+
+  .accesibility {
+    background-color: $blue;
+    color: $white;
+    border-color: $white;
+
+    > p{
+      background-color: $white;
+      color: $blue;
+    }
+
+    .accesibility-buttons {
+      color: $blue;
+     
+    }
+
+     .contrast-colors {
+      color: $blue;
+     }
+  }
+
  
 }
 
-@mixin func-grey-scale(){
-  $blue: grayscale(80%);
-  $white: grayscale(80%);
-}
 
 @mixin func-high-saturation(){
 //  header{
@@ -199,33 +196,18 @@ $fontFamily:Apple;
 //  footer {
 //   filter: saturate(200%);
 //  }
-
-   filter: saturate(200%);
-
-
+will-change: filter;
+   filter: saturate(200%);  
 
 }
 
-@mixin func-high-saturation-main(){
-  //  header{
-  //   filter: saturate(200%);
-  //  }
-  
-  //  main {
-  //   filter: saturate(200%);
-  //  }
-  
-  //  footer {
-  //   filter: saturate(200%);
-  //  }
+@mixin func-low-saturation() {
   will-change: filter;
-     filter: saturate(200%);
-    
+  filter: saturate(60%);
+}
 
-     .accesibility {
-     filter: none;
-     }
-  
-     
-  
-  }
+@mixin func-grey-scale() {
+  will-change: filter;
+  filter: saturate(10%);
+}
+

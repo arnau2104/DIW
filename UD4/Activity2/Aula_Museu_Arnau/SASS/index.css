@@ -26,6 +26,11 @@ header {
   border-bottom-right-radius: 5px;
 }
 
+main {
+  position: relative;
+  z-index: -1;
+}
+
 footer {
   background-color: #001E33;
   color: #FFF8F0;
@@ -69,6 +74,7 @@ footer {
   height: auto;
   text-align: center;
   border-radius: 5px;
+  z-index: 1000;
 }
 
 #menu-click.active li:hover {
@@ -154,7 +160,7 @@ img {
 .accesibility.active {
   background-color: #FFF8F0;
   width: 90%;
-  height: 90%;
+  height: 100%;
   position: fixed;
   top: 0;
   border: 1px solid #001E33;
@@ -187,6 +193,7 @@ img {
   padding: 10px;
   gap: 13px;
   justify-content: center;
+  margin-top: 65px;
 }
 
 .contrast-colors div {
@@ -208,6 +215,10 @@ img {
 
 .low-saturation .fa-tint {
   color: lightgrey;
+}
+
+.font-settings {
+  padding-bottom: 15px;
 }
 
 .font-size-slider {
@@ -254,7 +265,7 @@ img {
   flex-direction: column;
   align-items: center;
   padding-top: 25px;
-  gap: 8px;
+  gap: 5px;
 }
 
 .spacing div {
@@ -287,24 +298,6 @@ img {
   background-color: #FFF8F0;
   color: #001E33;
 }
-.dark-mode main #accesibilityIcon {
-  color: #FFF8F0;
-}
-.dark-mode main .accesibility {
-  background-color: #001E33;
-  color: #FFF8F0;
-  border-color: #FFF8F0;
-}
-.dark-mode main .accesibility > p {
-  background-color: #FFF8F0;
-  color: #001E33;
-}
-.dark-mode main .accesibility .accesibility-buttons {
-  color: #001E33;
-}
-.dark-mode main .accesibility .contrast-colors {
-  color: #001E33;
-}
 .dark-mode main .bone-description {
   color: #001E33;
 }
@@ -316,17 +309,38 @@ img {
   background-color: #FFF8F0;
   color: #001E33;
 }
-
-.high-saturation {
-  filter: saturate(200%);
+.dark-mode #accesibilityIcon {
+  color: #FFF8F0;
+}
+.dark-mode .accesibility {
+  background-color: #001E33;
+  color: #FFF8F0;
+  border-color: #FFF8F0;
+}
+.dark-mode .accesibility > p {
+  background-color: #FFF8F0;
+  color: #001E33;
+}
+.dark-mode .accesibility .accesibility-buttons {
+  color: #001E33;
+}
+.dark-mode .accesibility .contrast-colors {
+  color: #001E33;
 }
 
-.high-saturation-main {
+.high-saturation {
   will-change: filter;
   filter: saturate(200%);
 }
-.high-saturation-main .accesibility {
-  filter: none;
+
+.low-saturation {
+  will-change: filter;
+  filter: saturate(60%);
+}
+
+.grey-scale {
+  will-change: filter;
+  filter: saturate(10%);
 }
 
 /* PC*/
