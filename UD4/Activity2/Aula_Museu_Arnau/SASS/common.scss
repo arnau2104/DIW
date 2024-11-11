@@ -292,6 +292,10 @@ img {
     @include func-high-saturation();
 }
 
+.high-saturation-main {
+    @include func-high-saturation-main();
+}
+
 
 
 /* PC*/

@@ -50,7 +50,7 @@ lightContrast.addEventListener('click', ()=>{
 //Posar clase high-saturation al body
 highSaturation.addEventListener('click', ()=>{
     header.classList.toggle("high-saturation");
-    main.classList.toggle("high-saturation");
+    main.classList.toggle("high-saturation-main");
     footer.classList.toggle("high-saturation");
     accesibility.classList.toggle("active");
     console.log("dins");

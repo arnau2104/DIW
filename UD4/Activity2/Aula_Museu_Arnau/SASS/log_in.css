@@ -321,6 +321,14 @@ img {
   filter: saturate(200%);
 }
 
+.high-saturation-main {
+  will-change: filter;
+  filter: saturate(200%);
+}
+.high-saturation-main .accesibility {
+  filter: none;
+}
+
 /* PC*/
 @media screen and (min-width: 860px) {
   .logo-pageTitle h2 {

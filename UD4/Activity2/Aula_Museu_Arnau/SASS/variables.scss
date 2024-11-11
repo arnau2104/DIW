@@ -202,4 +202,30 @@ $fontFamily:Apple;
 
    filter: saturate(200%);
 
+
+
 }
+
+@mixin func-high-saturation-main(){
+  //  header{
+  //   filter: saturate(200%);
+  //  }
+  
+  //  main {
+  //   filter: saturate(200%);
+  //  }
+  
+  //  footer {
+  //   filter: saturate(200%);
+  //  }
+  will-change: filter;
+     filter: saturate(200%);
+    
+
+     .accesibility {
+     filter: none;
+     }
+  
+     
+  
+  }
