@@ -357,6 +357,7 @@ img {
   #page-title {
     font-size: 45px;
     display: flex;
+    color: white;
   }
   .fa-user {
     font-size: 45px;

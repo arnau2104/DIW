@@ -14,6 +14,10 @@ let main = document.querySelector("main");
 let footer = document.querySelector("footer");
 let greyScale = document.querySelector(".grey-scale"); 
 console.log("js cargat");
+let lineSpacingSmall = document.getElementById("spacingSmall");
+let lineSpacingNormal = document.getElementById("spacingNormal");
+let lineSpacingLarge = document.getElementById("spacingLarge");
+let lineSpacingExtraLarge = document.getElementById("spacingExtraLarge");
 
 
 // Al cargar la página, aplica el modo oscuro si estaba habilitado
@@ -37,11 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
         accesibility.classList.toggle("active");
     });
     
-    rangeValue.innerText = sliderRange.value;
     
-    sliderRange.oninput = function(){
-        rangeValue.innerText = sliderRange.value;
-    };
     
     //darkcontrast
     darkContrast.addEventListener('click' , ()=>{
@@ -100,8 +100,36 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log("grey-scale");
     });
 
+    lineSpacingSmall.addEventListener('click',()=>{
+        main.style.lineHeight = "normal";
+        accesibility.classList.toggle("active");
+    });
+
+    lineSpacingNormal.addEventListener('click',()=>{
+        main.style.lineHeight = 1.7 + "em";
+        accesibility.classList.toggle("active");
+    });
+
+    lineSpacingLarge.addEventListener('click',()=>{
+        main.style.lineHeight = 2.2 + "em";
+        accesibility.classList.toggle("active");
+    });
+
+    lineSpacingExtraLarge.addEventListener('click',()=>{
+        main.style.lineHeight = 2.5 + "em";
+        accesibility.classList.toggle("active");
+        console.log("extra large");
+    });
+
 
 });
 
 
 
+rangeValue.innerText = sliderRange.value;
+    
+    sliderRange.oninput = function(){
+        rangeValue.innerText = sliderRange.value;
+        document.body.style.fontSize = 5 * (sliderRange.value * 0.8) + "px";
+       // main.style.fontSize = 1 + (sliderRange.value / 10) + "em";
+    };

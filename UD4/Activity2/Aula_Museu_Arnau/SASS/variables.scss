@@ -36,7 +36,7 @@ $fontFamily:Apple;
   margin: $margin;
 }
 
-@mixin grow-shadow-animation ($class,$shadow-color,$shadow-width,$display) {
+@mixin grow-shadow-animation ($class,$shadow-color,$display) {
   #{$class}:hover {
     display: $display;
     vertical-align: middle;
