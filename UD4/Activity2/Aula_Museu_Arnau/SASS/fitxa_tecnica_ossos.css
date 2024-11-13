@@ -168,6 +168,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .accesibility > p {
@@ -275,8 +276,20 @@ img {
 }
 
 .spacing div button.accesisility-buttons {
-  height: 40px;
-  width: 70px;
+  height: 50px;
+  width: 77px;
+  padding: 10px 5px;
+}
+
+#default-values {
+  padding: 15px 5px;
+  text-align: center;
+  font-size: 20px;
+  background-color: #001E33;
+  color: #FFF8F0;
+  border-radius: 10px;
+  width: 50%;
+  height: auto;
 }
 
 .dark-mode {
@@ -287,7 +300,16 @@ img {
   background-color: #FFF8F0;
   color: #001E33;
 }
+.dark-mode header #page-title {
+  color: #001E33;
+}
+.dark-mode header p {
+  color: #001E33;
+}
 .dark-mode header .fa-user {
+  color: #001E33;
+}
+.dark-mode header .submenu a {
   color: #001E33;
 }
 .dark-mode main {
@@ -326,6 +348,10 @@ img {
 }
 .dark-mode .accesibility .contrast-colors {
   color: #001E33;
+}
+.dark-mode #default-values {
+  color: #001E33;
+  background-color: #FFF8F0;
 }
 
 .high-saturation {

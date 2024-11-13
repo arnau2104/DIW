@@ -29,6 +29,11 @@ let letterSpacingNormal = document.getElementById("letterSpacingNormal");
 let letterSpacingLarge = document.getElementById("letterSpacingLarge");
 let letterSpacingExtraLarge = document.getElementById("letterSpacingExtraLarge");
 
+let pageElements = document.querySelectorAll('*');
+const originalSizes = Array.from(pageElements).map(element => parseFloat(getComputedStyle(element).fontSize));
+
+let defaultValues = document.getElementById("default-values");
+
 
 // Al cargar la página, aplica el modo oscuro si estaba habilitado
 window.addEventListener('DOMContentLoaded', () => {
@@ -38,6 +43,15 @@ window.addEventListener('DOMContentLoaded', () => {
         header.classList.add("high-saturation");
         main.classList.add("high-saturation");
         footer.classList.add("high-saturation");
+        } else if(localStorage.getItem("lowSaturation") == 'enabled') {
+            header.classList.toggle("low-saturation");
+            main.classList.toggle("low-saturation");
+            footer.classList.toggle("low-saturation");
+            accesibility.classList.toggle("active");
+        } else if(localStorage.getItem("greyScale") == "enabled") {
+            header.classList.toggle("grey-scale");
+            main.classList.toggle("grey-scale");
+            footer.classList.toggle("grey-scale");
         };
     
 
@@ -99,7 +113,13 @@ window.addEventListener('DOMContentLoaded', () => {
         main.classList.toggle("low-saturation");
         footer.classList.toggle("low-saturation");
         accesibility.classList.toggle("active");
-        console.log("low saturation");
+       
+        if (header.classList.contains("low-saturation")) {
+            localStorage.setItem("lowSaturation", "enabled");
+        } else {
+            localStorage.setItem("lowSaturation", "disabled");
+        };
+
     });
 
     greyScale.addEventListener('click', ()=>{
@@ -107,7 +127,13 @@ window.addEventListener('DOMContentLoaded', () => {
         main.classList.toggle("grey-scale");
         footer.classList.toggle("grey-scale");
         accesibility.classList.toggle("active");
-        console.log("grey-scale");
+       
+        if (header.classList.contains("grey-scale")) {
+            localStorage.setItem("greyScale", "enabled");
+        } else {
+            localStorage.setItem("greyScale", "disabled");
+        };
+
     });
 
     //line spacing
@@ -200,6 +226,23 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log("extra large");
     });
 
+    defaultValues.addEventListener('click',()=> {
+        //put the default font size
+        sliderRange.value = 5;
+        
+        //default line spacing
+        document.body.style.lineHeight = 'normal';
+        
+        //default word spacing
+        document.body.style.wordSpacing = 'normal';
+
+         //default letter spacing
+         document.body.style.letterSpacing = 'normal';
+
+         localStorage.clear();
+         location.reload();
+    })
+
 
 });
 
@@ -209,6 +252,33 @@ rangeValue.innerText = sliderRange.value;
     
     sliderRange.oninput = function(){
         rangeValue.innerText = sliderRange.value;
-        document.body.style.fontSize = 5 * (sliderRange.value * 0.8) + "px";
-       // main.style.fontSize = 1 + (sliderRange.value / 10) + "em";
+        
+       chaneFontSize(sliderRange.value);
     };
+
+    function chaneFontSize(size) {
+         
+        pageElements.forEach((element, index) => {
+       
+
+          
+        // Take the original font-size of the element
+        const originalSize = originalSizes[index];
+       
+
+        let newSize;
+        if (size < 5) {
+            // if size is small than 5 reduce the size
+            newSize = originalSize * (1 - (5 - size) * 0.05); 
+        } else if (size > 5) {
+            //if size is bigger than 5 increase the size
+            newSize = originalSize * (1 + (size - 5) * 0.06); 
+        } else {
+            // if size is equals to 5 keep the size
+            newSize = originalSize;
+        }
+        // Aplica el nuevo tamaño de fuente al elemento
+        element.style.fontSize = `${newSize}px`;
+    
+    })
+};

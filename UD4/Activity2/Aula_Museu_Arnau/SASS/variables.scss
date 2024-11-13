@@ -125,8 +125,21 @@ $fontFamily:Apple;
     background-color: $white;
     color: $blue;
 
+    #page-title {
+      color: $blue;
+    }
+
+    p {
+      color: $blue;
+    }
      .fa-user {
       color: $blue;
+     }
+
+     .submenu {
+      a {
+        color: $blue;
+      }
      }
   }
 
@@ -180,6 +193,10 @@ $fontFamily:Apple;
      }
   }
 
+  #default-values {
+    color: $blue;
+    background-color: $white;
+  }
  
 }
 
@@ -198,3 +215,8 @@ $fontFamily:Apple;
   filter: saturate(10%);
 }
 
+@mixin func-increase-header {
+  header {
+    height: auto;
+  }
+}
