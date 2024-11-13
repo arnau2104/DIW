@@ -329,17 +329,14 @@ img {
 }
 
 .high-saturation {
-  will-change: filter;
   filter: saturate(200%);
 }
 
 .low-saturation {
-  will-change: filter;
   filter: saturate(60%);
 }
 
 .grey-scale {
-  will-change: filter;
   filter: saturate(10%);
 }
 
@@ -446,6 +443,9 @@ img {
     100% {
       transform: translateY(6px);
     }
+  }
+  .accesibility.active {
+    width: 50%;
   }
 }
 @media screen and (min-width: 861px) and (max-width: 1200px) {
@@ -563,7 +563,7 @@ form label {
 }
 
 .password p:hover {
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 @media screen and (min-width: 750px) {

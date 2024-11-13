@@ -185,29 +185,16 @@ $fontFamily:Apple;
 
 
 @mixin func-high-saturation(){
-//  header{
-//   filter: saturate(200%);
-//  }
 
-//  main {
-//   filter: saturate(200%);
-//  }
-
-//  footer {
-//   filter: saturate(200%);
-//  }
-will-change: filter;
    filter: saturate(200%);  
 
 }
 
 @mixin func-low-saturation() {
-  will-change: filter;
   filter: saturate(60%);
 }
 
 @mixin func-grey-scale() {
-  will-change: filter;
   filter: saturate(10%);
 }
 

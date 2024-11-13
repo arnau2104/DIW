@@ -433,6 +433,10 @@ img {
       .upDown {
         @include upDownAnimation(2s,infinite);
       }
+
+      .accesibility.active {
+        width: 50%;
+      }
     
 
 }

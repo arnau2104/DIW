@@ -19,6 +19,16 @@ let lineSpacingNormal = document.getElementById("spacingNormal");
 let lineSpacingLarge = document.getElementById("spacingLarge");
 let lineSpacingExtraLarge = document.getElementById("spacingExtraLarge");
 
+let wordSpacingSmall = document.getElementById("wordSpacingSmall");
+let wordSpacingNormal = document.getElementById("wordSpacingNormal");
+let wordSpacingLarge = document.getElementById("wordSpacingLarge");
+let wordSpacingExtraLarge = document.getElementById("wordSpacingExtraLarge");
+
+let letterSpacingSmall = document.getElementById("letterSpacingSmall");
+let letterSpacingNormal = document.getElementById("letterSpacingNormal");
+let letterSpacingLarge = document.getElementById("letterSpacingLarge");
+let letterSpacingExtraLarge = document.getElementById("letterSpacingExtraLarge");
+
 
 // Al cargar la página, aplica el modo oscuro si estaba habilitado
 window.addEventListener('DOMContentLoaded', () => {
@@ -100,23 +110,92 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log("grey-scale");
     });
 
+    //line spacing
     lineSpacingSmall.addEventListener('click',()=>{
+        header.style.lineHeight = "normal";
         main.style.lineHeight = "normal";
+        footer.style.lineHeight = "normal";
         accesibility.classList.toggle("active");
     });
 
     lineSpacingNormal.addEventListener('click',()=>{
+        header.style.lineHeight = 1.7 + "em";
         main.style.lineHeight = 1.7 + "em";
+        footer.style.lineHeight = 1.7 + "em";
         accesibility.classList.toggle("active");
     });
 
     lineSpacingLarge.addEventListener('click',()=>{
+        header.style.lineHeight = 2.2 + "em";
         main.style.lineHeight = 2.2 + "em";
+        footer.style.lineHeight = 2.2 + "em";
         accesibility.classList.toggle("active");
     });
 
     lineSpacingExtraLarge.addEventListener('click',()=>{
+        header.style.lineHeight = 2.5 + "em";
         main.style.lineHeight = 2.5 + "em";
+        footer.style.lineHeight = 2.5 + "em";
+        accesibility.classList.toggle("active");
+        console.log("extra large");
+    });
+
+    //word spacing
+    wordSpacingSmall.addEventListener('click',()=>{
+        header.style.wordSpacing= "normal";
+        main.style.wordSpacing= "normal";
+        footer.style.wordSpacing= "normal";
+        accesibility.classList.toggle("active");
+    });
+
+    wordSpacingNormal.addEventListener('click',()=>{
+        header.style.wordSpacing = 0.6 + "em";
+        main.style.wordSpacing = 0.6 + "em";
+        footer.style.wordSpacing = 0.6 + "em";
+        accesibility.classList.toggle("active");
+    });
+
+   wordSpacingLarge.addEventListener('click',()=>{
+        header.style.wordSpacing = 1.1 + "em";
+        main.style.wordSpacing = 1.1 + "em";
+        footer.style.wordSpacing = 1.1 + "em";
+        accesibility.classList.toggle("active");
+    });
+
+    wordSpacingExtraLarge.addEventListener('click',()=>{
+        header.style.wordSpacing = 1.4 + "em";
+        main.style.wordSpacing = 1.4 + "em";
+        footer.style.wordSpacing = 1.4 + "em";
+        accesibility.classList.toggle("active");
+        console.log("extra large");
+    });
+
+    //letter spacing
+    letterSpacingSmall.addEventListener('click',()=>{
+        header.style.letterSpacing= "normal";
+        main.style.letterSpacing= "normal";
+        footer.style.letterSpacing= "normal";
+        accesibility.classList.toggle("active");
+    });
+
+    letterSpacingNormal.addEventListener('click',()=>{
+        header.style.letterSpacing = 0.2 + "em";
+        main.style.letterSpacing = 0.2 + "em";
+        footer.style.letterSpacing = 0.2 + "em";
+        accesibility.classList.toggle("active");
+    });
+
+    letterSpacingLarge.addEventListener('click',()=>{
+        header.style.letterSpacing = 0.3 + "em";
+        main.style.letterSpacing = 0.3 + "em";
+        footer.style.letterSpacing = 0.3 + "em";
+        accesibility.classList.toggle("active");
+    });
+
+    letterSpacingExtraLarge.addEventListener('click',()=>{
+        header.style.letterSpacing = 0.4 + "em";
+        main.style.letterSpacing = 0.4 + "em";
+        footer.style.letterSpacing = 0.4 + "em";
         accesibility.classList.toggle("active");
         console.log("extra large");
     });
