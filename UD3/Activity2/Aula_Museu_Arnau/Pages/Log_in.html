@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muntatge de la balena</title>
+    <link rel="stylesheet" href="../Assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../SASS/log_in.css">
+</head>
+<body>
+    <header>
+        <i class="fa fa-bars mobile-menu" aria-hidden="true"></i>
+        <div class="logo-pageTitle">
+            <a href="../index.html"><img src="../Assets/Imgs/logo_fosc.png" alt="logo_fosc" class="logo"></a>
+       
+            <a href="../index.html"><h1 id="page-title" class="header-pc">Aula Museu</h1></a>
+        </div>
+        <div class="user-pc-menu">
+            <div class="header-pc pc-menu">
+                <ul class="horitzontal-menu">
+                <li><a href="./Historia_balena.html"><p>Història de la balena</p></a></li>
+                <li><a href="./Muntatge_balena.html" ><p>Muntatge de la balena</p></a></li>
+                <li><a href="#"><p>Notícies</p></a></li>
+               <li> <a href="#" class="voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
+                    <ul class="submenu"> 
+                        <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
+                        <li><a href="./Altres_Activitats.html">Altres Activitats</li></a>
+                    </ul></li>
+               <li> <a href="#"><p>Pàgina d'Administració</p></a></li>
+                </ul>
+            </div>
+       
+            <a href="./Log_in.html"> <i class="fa fa-user" aria-hidden="true"></i></a>
+    </div>
+   
+    </header>
+    <aside id="menu-click">
+        <i class="fa fa-times close-menu" aria-hidden="true"></i>
+        <ul>
+            <a href="./Historia_balena.html"><li>Historia de la ballena</li></a>
+            <a href="./Muntatge_balena.html"><li>Muntatge de la balena</li></a>
+            <li>Noticies</li>
+            <li> <a href="#" class="mobile-voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
+                <ul class="mobile-submenu"> 
+                    <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
+                    <li><a href="./Altres_Activitats.html">Altres Activitats</li></a>
+                </ul></li>
+                <li> <a href="#"><p>Pàgina d'Administració</p></a></li>
+        </ul>
+    </aside>
+    <main>
+       <div class="div-form">
+            <form action="">
+                <h2>Iniciar Sessió</h2>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="password">
+                <label for="password">Contrasenya</label>
+                <input type="text" name="password" id="password">
+                <a href="#" id="forgot-password"><p>Has oblidat la contrasenya?</p></a>
+                </div>
+                <input type="submit" value="Iniciar Sessió" name="submit" id="submit">
+            </form>
+       </div>
+
+       
+       
+        
+    </main>
+    <i class="fa fa-universal-access" id="accesibilityIcon" aria-hidden="true"></i>
+    <footer>
+        <h3>Copyright Arnau 2024</h3>
+    </footer>
+    <aside class="accesibility">
+        <p>Acessibility <i class="fa fa-times" aria-hidden="true"></i>
+        </p>
+        <div class="contrast-colors"> 
+            <div class="dark-contrast accesisility-buttons">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+                Dark Contrast         
+            </div>
+            <div class="light-contrast accesisility-buttons">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+                Light Contrast         
+            </div>
+            <div class="high-saturation accesisility-buttons">
+                <i class="fa fa-tint" aria-hidden="true"></i>
+                High Saturation         
+            </div>
+            <div class="low-saturation accesisility-buttons">
+                <i class="fa fa-tint" aria-hidden="true"></i>
+                Low Saturation         
+            </div>
+            <div class="grey-scale accesisility-buttons">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Gray Scale         
+            </div>
+        </div>
+
+        <div class="font-settings">     
+                <div class="font-size-slider ">
+                    <h4>Font Size</h4>
+                    <div>
+                        <input type="range" min="1" max="10" value = "5" id="sliderRange"><p id="rangeValue"></p>
+                    </div>
+                </div>
+                <div class="line-spacing spacing">
+                    <h4>Line Spacing</h4>
+                    <div>
+                        <button id="spacingSmall" class=" accesisility-buttons">SMALL</button>
+                        <button id="spacingNormal" class=" accesisility-buttons">NORMAL</button>
+                        <button id="spacingLarge" class=" accesisility-buttons">LARGE</button>
+                        <button id="spacingExtraLarge" class=" accesisility-buttons">EXTRA LARGE</button>
+                    </div>
+                </div>
+
+                <div class="word-spacing spacing">
+                    <h4>Word Spacing</h4>
+                    <div>
+                        <button id="wordSpacingSmall" class=" accesisility-buttons">SMALL</button>
+                        <button id="wordSpacingNormal" class=" accesisility-buttons">NORMAL</button>
+                        <button id="wordSpacingLarge" class=" accesisility-buttons">LARGE</button>
+                        <button id="wordSpacingExtraLarge" class=" accesisility-buttons">EXTRA LARGE</button>
+                    </div>
+                </div>
+
+                <div class="word-spacing spacing">
+                    <h4>Letter Spacing</h4>
+                    <div>
+                        <button id="letterSpacingSmall" class=" accesisility-buttons ">SMALL</button>
+                        <button id="letterSpacingNormal" class=" accesisility-buttons">NORMAL</button>
+                        <button id="letterSpacingLarge" class=" accesisility-buttons">LARGE</button>
+                        <button id="letterSpacingExtraLarge" class=" accesisility-buttons">EXTRA LARGE</button>
+                    </div>
+                </div>
+        </div>
+        <button id="default-values">Restaurar valors</button>
+    </aside>
+
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/accesibility.js"></script>
+</body>
+</html>
