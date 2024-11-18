@@ -26,11 +26,6 @@ header {
   border-bottom-right-radius: 5px;
 }
 
-main {
-  position: relative;
-  z-index: -1;
-}
-
 footer {
   background-color: #001E33;
   color: #FFF8F0;

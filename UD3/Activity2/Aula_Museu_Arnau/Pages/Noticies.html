@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticies</title>
+    <link rel="stylesheet" href="../Assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../SASS/common.css">
+    <link rel="stylesheet" href="../CSS/output.css">
 </head>
 <body>
     <header>
         <i class="fa fa-bars mobile-menu" aria-hidden="true"></i>
         <div class="logo-pageTitle">
             <a href="../index.html"><img src="../Assets/Imgs/logo_fosc.png" alt="logo_fosc" class="logo"></a>
-            <h2>Fitxa Tecnica Ossos</h2>
+            <h2>Noticies</h2>
             <a href="../index.html"><h1 id="page-title" class="header-pc">Aula Museu</h1></a>
         </div>
         <div class="user-pc-menu">
@@ -47,9 +49,92 @@
                 <li> <a href="#"><p>Pàgina d'Administració</p></a></li>
         </ul>
     </aside>
+   
     <main>
 
+        <div class="flex justify-between p-2">
+            <div>
+                <i class="fa fa-filter" aria-hidden="true"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="news-container flex flex-col w-full h-full px-2">
+            <div class="news flex h-40 w-full gap-2">
+                <div class="w-3/5 h-full">
+                    <img class="rounded-md h-full " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1">
+                </div>
+                <div class="flex flex-col w-2/4 h-full" >
+                    <h4 class="font-bold underline text-center text-xl">Noticia 1</h4>
+                    <div class="h-36 overflow-y-auto bg-light-white rounded-md border p-1.5">   
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                    </div>
+                    <div class="flex justify-between pt-1">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart text-red-600" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="news">
+                <img src="" alt="news 1">
+                <div>
+                    <h4>Titolde la noticia:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                    <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                </div>
+                <div>
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="news">
+                <img src="" alt="news 1">
+                <div>
+                    <h4>Titolde la noticia:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                    <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                </div>
+                <div>
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="news">
+                <img src="" alt="news 1">
+                <div>
+                    <h4>Titolde la noticia:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                    <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                </div>
+                <div>
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="news">
+                <img src="" alt="news 1">
+                <div>
+                    <h4>Titolde la noticia:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                    <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                </div>
+                <div>
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </div>
+            </div> -->
+        </div>
+
     </main>
+   
     <i class="fa fa-universal-access" id="accesibilityIcon" aria-hidden="true"></i>
     <footer>
         <h3>Copyright Arnau 2024</h3>
