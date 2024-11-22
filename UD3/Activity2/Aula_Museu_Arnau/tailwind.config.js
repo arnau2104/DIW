@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./Pages/Noticies.html"],
+  content: ["./Pages/*.html"],
   theme: {
     extend: {
       colors: {
@@ -15,4 +15,5 @@ module.exports = {
   },
   plugins: [],
 }
+
 
