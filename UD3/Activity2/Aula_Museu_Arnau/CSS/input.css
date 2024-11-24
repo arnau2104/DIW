@@ -4,11 +4,15 @@
 
 @layer components {
     .news-style {
-        @apply flex h-44 w-full gap-2 items-center intermidium:w-60 intermidium:flex-col intermidium:border intermidium:border-black intermidium:rounded-lg intermidium:h-auto
+        @apply flex flex-col h-56  w-full gap-2 items-center intermidium:w-60 intermidium:flex-col intermidium:border intermidium:border-black intermidium:rounded-lg intermidium:h-auto intermidium:py-2
         pc:w-[380px] ;
     }
 
     .news-container {
-        @apply flex flex-col w-full h-full px-2 gap-14 intermidium:flex-row intermidium:flex-wrap intermidium:justify-center pc:gap-20 pc:px-2;
+        @apply flex flex-col  w-full h-full px-3  mt-3 mb-52 gap-60 intermidium:flex-row intermidium:flex-wrap intermidium:gap-6  intermidium:justify-center pc:gap-20 pc:px-2 intermidium:mb-4;
+    }
+
+    .button-style {
+        @apply bg-navy-blue text-cream-white rounded-md w-40 p-1 m-2;
     }
 }

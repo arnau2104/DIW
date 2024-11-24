@@ -4,8 +4,8 @@
 
 ## 2.0.1 - Jan 26, 2015
 
-- Added `includeClasses` option to Sass/LESS so you can now generate CSS with or without Hover.css default class names
-- Added `!default` flags to Sass variables in `_options.scss`
+- Added `includeClasses` option to sass/LESS so you can now generate CSS with or without Hover.css default class names
+- Added `!default` flags to sass variables in `_options.scss`
 
 ## 2.0.0 - Jan 7, 2015
 
@@ -20,5 +20,5 @@
 - Updated `bob` (formerly `hover`) and `hang` effects to work around [this WebKit/Blink bug](https://github.com/IanLunn/Hover/issues/24)
 - Change default `animation-timing-function` and `transition-timing-function` values for various effects
 - Changed all instances of 'colour' to 'color'
-- Added small amount of JS to demo page to prevent `<a href="#"></a>` elements from navigating (not required for hover.css to work)
+- Added small amount of js to demo page to prevent `<a href="#"></a>` elements from navigating (not required for hover.css to work)
 - Added "What's Included?" section to README.md

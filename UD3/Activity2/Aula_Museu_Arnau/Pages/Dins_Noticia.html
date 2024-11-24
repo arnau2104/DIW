@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticies</title>
     <link rel="stylesheet" href="../Assets/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../SASS/common.css">
+    <link rel="stylesheet" href="../sass/common.css">
     <link rel="stylesheet" href="../CSS/output.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
                 <ul class="horitzontal-menu">
                 <li><a href="./Historia_balena.html"><p>Història de la balena</p></a></li>
                 <li><a href="./Muntatge_balena.html"><p>Muntatge de la balena</p></a></li>
-                <li><a href="#"><p>Notícies</p></a></li>
+                <li><a href="./Noticies.html"><p>Notícies</p></a></li>
                <li> <a href="#" class="voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
                     <ul class="submenu"> 
                         <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
@@ -40,7 +40,7 @@
         <ul>
             <a href="./Historia_balena.html"><li>Historia de la ballena</li></a>
             <a href="./Muntatge_balena.html"><li>Muntatge de la balena</li></a>
-            <li>Noticies</li>
+            <a href="./Noticies.html"><li>Noticies</li></a>
             <li> <a href="#" class="mobile-voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
                 <ul class="mobile-submenu"> 
                     <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
@@ -49,16 +49,16 @@
                 <li> <a href="#"><p>Pàgina d'Administració</p></a></li>
         </ul>
     </aside>
-    <main class="px-4  flex flex-col items-center pc:px-52">
+    <main class="px-4  flex flex-col items-center  intermidium:px-10 pc:px-56 pc-large:px-72">
         
 
        <div class="news flex flex-col pt-4" >
             
-            <h2 class="font-bold text-center text-xl">Transllat de la balena al museu del RAMIS</h2>
+            <h2 class="font-bold text-center text-2xl intermidium:text-3xl pc:p-2">Transllat de la balena al museu del RAMIS</h2>
             
-            <img class="rounded-md pc:w-[1200px] self-center" src="../Assets/Imgs/trastall_balena.JPG" alt="">
+            <img class="rounded-md self-center pc-large:w-11/12 pc-large:mb-2 pc-large:h-[600px]" src="../Assets/Imgs/trastall_balena.JPG" alt="">
 
-            <div class="flex justify-between text-lg items-center border-b-2 border-black intermidium:p-1  mt-1 mb-2">
+            <div class="flex justify-between text-lg items-center border-b-2 border-black intermidium:p-1  mt-1 mb-2 pc:text-xl">
                 <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
                 <div>
                     <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -69,6 +69,13 @@
             <div class="news-text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
                 <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+
             </div>
 
        </div>
@@ -147,7 +154,8 @@
         </div>
         <button id="default-values">Restaurar valors</button>
     </aside>
-    <script src="../JS/menu.js"></script>
-    <script src="../JS/accesibility.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/accesibility.js"></script>
+    <script src="../js/noticies.js"></script>
 </body>
 </html>
