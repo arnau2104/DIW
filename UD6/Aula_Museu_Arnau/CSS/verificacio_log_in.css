@@ -1,0 +1,7 @@
+.div-form input[type="email"].correcte {
+    border-color: #2ecc71;
+}
+
+.div-form input[type="email"].incorrecte {
+    border-color: #e74c3c;
+}
