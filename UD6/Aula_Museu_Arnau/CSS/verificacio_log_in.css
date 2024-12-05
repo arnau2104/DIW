@@ -5,3 +5,10 @@
 .div-form input[type="email"].incorrecte {
     border-color: #e74c3c;
 }
+
+.errorMessage {
+    color: #eb2c17;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 5px;
+}

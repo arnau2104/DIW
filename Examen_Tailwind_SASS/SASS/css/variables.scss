@@ -1,0 +1,12 @@
+$light-grey: #f0f0f0;
+$grey: #333;
+$orange: #ff6347;
+$black: rgba(0,0,0,0.3);
+$black-hard: rgba(0,0,0,0.7);
+
+
+@mixin hoverEffect ($color,$box-shadow-color,$x-offset, $y-offset, $blur-radius) {
+    background-color: $color;
+     box-shadow: $x-offset $y-offset $blur-radius $box-shadow-color ;
+   
+}

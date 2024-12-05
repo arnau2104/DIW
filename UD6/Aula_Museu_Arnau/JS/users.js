@@ -10,17 +10,16 @@ function generarSalt() {
 }
 
 //encriptar contrasenya
-function encryptPassword(userPassword,salt) {
-    const iv = CryptoJS.lib.WordArray.random(16);
-    console.log(iv);
-    const encryptedPassword = CryptoJS.AES.encrypt(userPassword, salt,{ iv }).toString();
 
-    return encryptedPassword;
+function encryptPassword(userPassword,salt) {
+   
+   
+    const hashedPassword = CryptoJS.SHA256(userPassword + salt).toString();
+    return hashedPassword;
 }
 
-
 //desencriptar contrasenya
-function desencryptPassword(encryptedPassword,clave) {
+function desencryptPassword(encryptedPassword,salt) {
     
     const decryptedMessage = CryptoJS.AES.decrypt(encryptedPassword, salt).toString(CryptoJS.enc.Utf8);
 

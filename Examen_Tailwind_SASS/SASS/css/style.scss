@@ -1,0 +1,72 @@
+@import "variables.scss";
+
+body {
+    background-color: $light-grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    header {
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+        padding: 5px 10px;
+        margin-bottom: 25px;
+
+        section {
+            width: 100%;
+
+            ul {
+                list-style: none;
+                // display: flex;
+                // flex-direction: column;
+
+                
+                
+                li {
+                    border: 1px solid $grey;
+                    padding: 4px;
+                    margin-top: 4px;
+
+                    &:hover {
+                        @include hoverEffect($orange,'',0px,0px,0px);
+                       
+                    }
+                    
+                }
+            }
+        }
+
+        button {
+            background-color: $grey;
+            color: $light-grey;
+            width: 130px;
+            padding: 8px;
+
+            &:hover {
+                @include hoverEffect($orange,$black,5px,5px,0.9px);
+               
+            }
+
+        }
+    }
+
+    footer {
+        background-color: $black;
+        opacity: 50%;
+        width: 100%;
+        text-align: center;
+        
+    }
+}
