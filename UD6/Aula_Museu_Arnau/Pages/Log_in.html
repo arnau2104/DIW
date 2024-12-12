@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muntatge de la balena</title>
     <link rel="stylesheet" href="../Assets/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../SASS/log_in.css">
-    <link rel="stylesheet" href="../CSS/verificacio_log_in.css">
+    <link rel="stylesheet" href="../sass/log_in.css">
 </head>
 <body>
     <header>
@@ -21,7 +20,7 @@
                 <ul class="horitzontal-menu">
                 <li><a href="./Historia_balena.html"><p>Història de la balena</p></a></li>
                 <li><a href="./Muntatge_balena.html" ><p>Muntatge de la balena</p></a></li>
-                <li><a href="#"><p>Notícies</p></a></li>
+                <li><a href="./Noticies.html"><p>Notícies</p></a></li>
                <li> <a href="#" class="voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
                     <ul class="submenu"> 
                         <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
@@ -40,7 +39,7 @@
         <ul>
             <a href="./Historia_balena.html"><li>Historia de la ballena</li></a>
             <a href="./Muntatge_balena.html"><li>Muntatge de la balena</li></a>
-            <li>Noticies</li>
+            <a href="./Noticies.html"><li>Noticies</li></a>
             <li> <a href="#" class="mobile-voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
                 <ul class="mobile-submenu"> 
                     <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
@@ -51,19 +50,16 @@
     </aside>
     <main>
        <div class="div-form">
-            <form>
+            <form action="">
                 <h2>Iniciar Sessió</h2>
                 <div class="email">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                    <small class="errorMessage"></small>
+                    <input type="email" name="email" id="email">
                 </div>
                 <div class="password">
-                    <label for="password">Contrasenya</label>
-                    <input type="password" name="password" id="password" required>
-                    <small class="errorMessage"></small>
-                    <a href="#" id="forgot-password"><p>Has oblidat la contrasenya?</p></a>
-                    
+                <label for="password">Contrasenya</label>
+                <input type="text" name="password" id="password">
+                <a href="#" id="forgot-password"><p>Has oblidat la contrasenya?</p></a>
                 </div>
                 <input type="submit" value="Iniciar Sessió" name="submit" id="submit">
             </form>
@@ -143,11 +139,7 @@
         <button id="default-values">Restaurar valors</button>
     </aside>
 
-    <script src="../JS/menu.js"></script>
-    <script src="../JS/accesibility.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>    
-    <script src="../JS/users.js"></script>
-    <script src="../JS/log_in.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/accesibility.js"></script>
 </body>
 </html>

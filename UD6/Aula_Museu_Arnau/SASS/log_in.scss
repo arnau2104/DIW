@@ -55,7 +55,7 @@ form label {
     margin-top: 25px;
 }
 
-.div-form input[type="password"] {
+.div-form input[type="text"] {
     width: 100%;
     height: 25px;
     @include inputStyle($blue,5px);
@@ -95,7 +95,7 @@ form label {
 }
 
 #submit:hover {
-    scale: 1.05;
+    scale: 1.15;
 }
 
 .password p {
@@ -103,7 +103,7 @@ form label {
 }
 
 .password p:hover {
-   transform: scale(1.05);
+   transform: scale(1.10);
 }
 
 

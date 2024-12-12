@@ -2,7 +2,7 @@
 
 <a href="https://www.buymeacoffee.com/ianlunn" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" width="217" height="51" ></a>
 
-A collection of CSS3 powered hover effects to be applied to links, buttons, logos, SVG, featured images and so on. Easily apply to your own elements, modify or just use for inspiration. Available in CSS, Sass, and LESS.
+A collection of CSS3 powered hover effects to be applied to links, buttons, logos, SVG, featured images and so on. Easily apply to your own elements, modify or just use for inspiration. Available in CSS, sass, and LESS.
 
 [Demo](http://ianlunn.github.io/Hover)  |
 [Tutorial](http://ianlunn.co.uk/articles/hover-css-tutorial-introduction/)
@@ -20,7 +20,7 @@ A collection of CSS3 powered hover effects to be applied to links, buttons, logo
     - [Other](#other)
 - [Browser Support](#browser-support)
 - [Using Grunt for Development](#using-grunt-for-development)
-- [Using Sass/LESS for Development](#using-sassless-for-development)
+- [Using sass/LESS for Development](#using-sassless-for-development)
     - [_hacks](#\_hacks)
     - [_mixins](#\_mixins)
     - [_options](#\_options)
@@ -81,7 +81,7 @@ Example element after applying Hover.css effect:
 <a href="#" class="hvr-grow">Add to Basket</a>
 ```
 
-**Note**: As of `2.0.0` all Hover.css class names are prefixed with `hvr-` to prevent conflicts with other libraries/stylesheets. If using Sass/LESS, this can easily be changed using the `$nameSpace`/`@nameSpace` variable in `scss/_options.scss` or `less/_options.less`.
+**Note**: As of `2.0.0` all Hover.css class names are prefixed with `hvr-` to prevent conflicts with other libraries/stylesheets. If using sass/LESS, this can easily be changed using the `$nameSpace`/`@nameSpace` variable in `scss/_options.scss` or `less/_options.less`.
 
 ### B. Reference Hover.css
 
@@ -122,7 +122,7 @@ display: inline-block;
 vertical-align: middle;
 ```
 
-Should you wish to override this behavior, either remove the above CSS from Hover.css or change the `display` property for the element. Be sure to declare the override after the Hover.css declarations so the CSS cascade will take effect. Alternatively, if you are using the Sass/LESS version of Hover.css, you can remove/comment out the `forceBlockLevel()` mixin found in `scss/_hacks.scss` or `less/_hacks.less`.
+Should you wish to override this behavior, either remove the above CSS from Hover.css or change the `display` property for the element. Be sure to declare the override after the Hover.css declarations so the CSS cascade will take effect. Alternatively, if you are using the sass/LESS version of Hover.css, you can remove/comment out the `forceBlockLevel()` mixin found in `scss/_hacks.scss` or `less/_hacks.less`.
 
 For more information about Transformable elements, see the [CSS Transforms Module](http://www.w3.org/TR/css3-transforms/#transformable-element).
 
@@ -178,8 +178,8 @@ The project consists of the following folders and files:
 ### scss/less
 
 - **effects** - Contains each individual effect sorted into categorized folders
-- **_hacks.scss/_hacks.less, _mixins.scss/_mixins.less, _options.scss/_options.less** - Sass/LESS Utilities
-- **hover.scss/hover.less** - Development version of Hover.css in Sass and LESS flavours
+- **_hacks.scss/_hacks.less, _mixins.scss/_mixins.less, _options.scss/_options.less** - sass/LESS Utilities
+- **hover.scss/hover.less** - Development version of Hover.css in sass and LESS flavours
 
 ### Other
 
@@ -199,15 +199,15 @@ Aside from the above mentioned browsers, Hover.css is supported across all major
 
 ## Using Grunt for Development
 
-Grunt is non-essential but can speed up development. With [Grunt installed](http://gruntjs.com/getting-started), run `grunt` from the command line to set up a development server accessed at [http://127.0.0.1:8000/](http://127.0.0.1:8000/) or your local IP for network testing. With Grunt running, Sass or LESS will be preprocessed (depending on whether you work out of the `scss` or `less` folder) and CSS files will be minified.
+Grunt is non-essential but can speed up development. With [Grunt installed](http://gruntjs.com/getting-started), run `grunt` from the command line to set up a development server accessed at [http://127.0.0.1:8000/](http://127.0.0.1:8000/) or your local IP for network testing. With Grunt running, sass or LESS will be preprocessed (depending on whether you work out of the `scss` or `less` folder) and CSS files will be minified.
 
-**Note:** Originally Grunt was set up to autoprefix CSS properties but to make the project as accessible as possible, this is no longer the case. The `prefixed(property, value)` Sass/LESS mixin should be used for browser prefixing instead. See [Using Sass/LESS for Development](#using-sassless-for-development) and [Using LESS for Development].
+**Note:** Originally Grunt was set up to autoprefix CSS properties but to make the project as accessible as possible, this is no longer the case. The `prefixed(property, value)` sass/LESS mixin should be used for browser prefixing instead. See [Using sass/LESS for Development](#using-sassless-for-development) and [Using LESS for Development].
 
-## Using Sass/LESS for Development
+## Using sass/LESS for Development
 
-Sass/LESS are non-essential but can speed up development. Preprocess Sass/LESS with your favourite software or the environment provided via [Grunt](#using-grunt-for-development).
+sass/LESS are non-essential but can speed up development. Preprocess sass/LESS with your favourite software or the environment provided via [Grunt](#using-grunt-for-development).
 
-Sass/LESS is used in the Hover.css project to separate various CSS into specific files. Each effect is within its own file in the `effects` directory. Hover.css also uses the following `.scss` and `.less` files:
+sass/LESS is used in the Hover.css project to separate various CSS into specific files. Each effect is within its own file in the `effects` directory. Hover.css also uses the following `.scss` and `.less` files:
 
 ### _hacks
 Contains hacks (undesirable but usually necessary lines of code) applied to certain effects. [Hacks explained here](https://github.com/IanLunn/Hover/wiki/Hacks-Explained).
@@ -217,7 +217,7 @@ Contains `prefixed` and `keyframes` mixins that apply the necessary prefixes you
 
 Properties can be prefixed like so:
 
-- Sass:
+- sass:
 ```css
 @include prefixed(transition-duration, .3s);
 ```
@@ -230,7 +230,7 @@ The `prefixed` mixin is passed the property you want to prefix, followed by its 
 
 Keyframes can be prefixed like so:
 
-- Sass:
+- sass:
 ```css
 @include keyframes(my-animation) {
     to {

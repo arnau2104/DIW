@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticies</title>
-    <link rel="stylesheet" href="../SASS/common.css">
+    <link rel="stylesheet" href="../Assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../sass/common.css">
+    <link rel="stylesheet" href="../CSS/output.css">
 </head>
 <body>
     <header>
         <i class="fa fa-bars mobile-menu" aria-hidden="true"></i>
         <div class="logo-pageTitle">
             <a href="../index.html"><img src="../Assets/Imgs/logo_fosc.png" alt="logo_fosc" class="logo"></a>
-            <h2>Fitxa Tecnica Ossos</h2>
+            <h2>Noticies</h2>
             <a href="../index.html"><h1 id="page-title" class="header-pc">Aula Museu</h1></a>
         </div>
         <div class="user-pc-menu">
@@ -19,7 +21,7 @@
                 <ul class="horitzontal-menu">
                 <li><a href="./Historia_balena.html"><p>Història de la balena</p></a></li>
                 <li><a href="./Muntatge_balena.html"><p>Muntatge de la balena</p></a></li>
-                <li><a href="#"><p>Notícies</p></a></li>
+                <li><a href="./Noticies.html"><p>Notícies</p></a></li>
                <li> <a href="#" class="voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
                     <ul class="submenu"> 
                         <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
@@ -38,7 +40,7 @@
         <ul>
             <a href="./Historia_balena.html"><li>Historia de la ballena</li></a>
             <a href="./Muntatge_balena.html"><li>Muntatge de la balena</li></a>
-            <li>Noticies</li>
+            <a href="./Noticies.html"><li>Noticies</li></a>
             <li> <a href="#" class="mobile-voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
                 <ul class="mobile-submenu"> 
                     <li><a href="./Fitxa_Tecnica_Ossos.html">Fitxa Tècnica</li></a>
@@ -48,8 +50,213 @@
         </ul>
     </aside>
     <main>
+        
+
+        <div class="flex justify-between  px-3 pt-4 text-lg intermidium:px-5 intermidium:text-xl pc:text-2xl pc:px-20 intermidium:py-3 ">
+            <div>
+                <i class="fa fa-filter" aria-hidden="true"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+        
+        <div class="news-container">
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart " aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart " aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news news-style ">
+                <a href="./Dins_Noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./Dins_Noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                        </div>
+                        <a href="./Dins_Noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            
+            
+      
+        </div>
+    
+        
+       
 
     </main>
+   
     <i class="fa fa-universal-access" id="accesibilityIcon" aria-hidden="true"></i>
     <footer>
         <h3>Copyright Arnau 2024</h3>
@@ -119,7 +326,8 @@
         </div>
         <button id="default-values">Restaurar valors</button>
     </aside>
-    <script src="../JS/menu.js"></script>
-    <script src="../JS/accesibility.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/accesibility.js"></script>
+    <script src="../js/noticies.js"></script>
 </body>
 </html>
