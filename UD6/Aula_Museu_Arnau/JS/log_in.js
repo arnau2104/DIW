@@ -94,14 +94,12 @@ $(()=> {
        if(emailComprobation(inputEmail)==true && comparePasswords(inputPassword.val()) == true) {
         console.log("login done");
         $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
+        window.location.href="../Pages/Pagina_Administracio.html";
        }else {
         console.log("login fail");
         $(".log-in-result").text("Invalid username o password").addClass("incorrecte").removeClass("correcte");
        }
 
-       users.forEach((user)=>{
-
-       });
 
         
     })
