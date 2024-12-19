@@ -43,8 +43,8 @@ function desencryptPassword(encryptedPassword,salt) {
     is_first_login: 1
 },{
     id :2, 
-    name: "admin" , 
-    email: "desenvolupador@iesjoanramis.org", 
+    name: "arnau" , 
+    email: "amarques20733@iesjoanramis.org", 
     password: encryptedPassword, 
     salt: salt , 
     edit_users: 1, 
@@ -54,8 +54,8 @@ function desencryptPassword(encryptedPassword,salt) {
     is_first_login: 1
 },{
     id : 3, 
-    name: "admin" , 
-    email: "desenvolupador@iesjoanramis.org", 
+    name: "peri" , 
+    email: "erikmozos@iesjoanramis.org", 
     password: encryptedPassword, 
     salt: salt , 
     edit_users: 1, 
@@ -65,8 +65,8 @@ function desencryptPassword(encryptedPassword,salt) {
     is_first_login: 1
 },{
     id : 4, 
-    name: "admin" , 
-    email: "desenvolupador@iesjoanramis.org", 
+    name: "luca" , 
+    email: "lucasegui@iesjoanramis.org", 
     password: encryptedPassword, 
     salt: salt , 
     edit_users: 1, 

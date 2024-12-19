@@ -2,6 +2,9 @@ let users = JSON.parse(localStorage.getItem("users"));
 let inputEmail = $("#email");
 let inputPassword = $("#password");
 let form = $("form");
+let user_loged;
+let label_repeated_password = $("#label_repeated_password");
+let repeated_password = $("#repeated_password");
 
 function esEmailValid(input) {
     // javascript validació email regex
@@ -17,19 +20,21 @@ function emailComprobation(inputEmail) {
     let emailCorrecte = false;
     if(esEmailValid(inputEmail.val()) == true) {    
             
-        users.forEach((user)=> {
+        $.each(users ,function (index,user) {
 
             if(inputEmail.val() === user.email) {
                 inputEmail.removeClass("incorrecte");
                 inputEmail.addClass("correcte");
                 console.log("email correcte");
                 emailCorrecte = true;
+                return false;
                 
             }else {
                 inputEmail.removeClass("correcte");
                 inputEmail.addClass("incorrecte");
                 console.log("email incorrecte");
                 emailCorrecte = false;
+                
             };
 
         });
@@ -48,7 +53,7 @@ function comparePasswords(password) {
 
     let passwordMatch = false;
 
-    users.forEach((user)=> {
+    $.each(users,function (index,user){
        
     let encryptedInput = encryptPassword(password,user.salt);
 
@@ -56,6 +61,8 @@ function comparePasswords(password) {
             
             console.log("Contrasenya correcte");
             passwordMatch = true;
+            user_loged = user;
+            return false;
         }else {
            
             console.log("Contrasenya incorrecte");
@@ -91,10 +98,56 @@ $(()=> {
     form.on("submit" , (e)=> {
         e.preventDefault();
   
-       if(emailComprobation(inputEmail)==true && comparePasswords(inputPassword.val()) == true) {
+        if(repeated_password.val().length != 0) {
+            if(repeated_password.val().length >= 12) {
+                if(repeated_password.val() == inputPassword.val()) {
+
+                    let salt = generarSalt();
+                    let changedPassword = encryptPassword(inputPassword.val(),salt);
+
+                    user_loged.password = changedPassword;
+                    user_loged.salt = salt;
+                    user_loged.is_first_login = 0;
+
+                    $.each(users,function (index,user){
+                        if(user.id == user_loged.id) {
+                            console.log(user);
+                            user = user_loged;
+                            console.log(user);
+
+                            localStorage.setItem("users", JSON.stringify(users));
+
+                            return false;
+                        }
+                    })
+
+                    $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
+                     setTimeout(()=>window.location.href="../Pages/Pagina_Administracio.html",1000);
+                }
+            }else {
+                $(".password .errorMessage").text("The password needs minimum 12 characters");
+                $(".log-in-result").text("")
+            }
+        }
+
+       else if(emailComprobation(inputEmail)==true && comparePasswords(inputPassword.val()) == true) {
         console.log("login done");
-        $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
-        window.location.href="../Pages/Pagina_Administracio.html";
+
+     
+       
+        if(repeated_password.val().length == 0 && user_loged.is_first_login == 1) {
+            inputPassword.val("");
+            label_repeated_password.show();
+            repeated_password.show();
+       
+        }else {
+            $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
+            setTimeout(()=>window.location.href="../Pages/Pagina_Administracio.html",1000);
+            // label_repeated_password.hide();
+            // repeated_password.hide();
+        }
+
+       
        }else {
         console.log("login fail");
         $(".log-in-result").text("Invalid username o password").addClass("incorrecte").removeClass("correcte");

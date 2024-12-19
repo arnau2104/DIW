@@ -587,6 +587,14 @@ form label {
   transform: scale(1.1);
 }
 
+#repeated_password {
+  display: none;
+}
+
+#label_repeated_password {
+  display: none;
+}
+
 @media screen and (min-width: 750px) {
   .div-form {
     width: 45%;

@@ -44,7 +44,7 @@ function printComponentsOnMobileLayout() {
     $.each(users, function (index,user) {
         $("#users-list").append(`<tr class='user' id=user_${user.id}></tr>`);
         
-        $(`#users-list #user_${user.id}`).append(`<td>${user.id}</td>`); 
+        
         $(`#users-list #user_${user.id}`).append(`<td>${user.name}</td>`); 
         $(`#users-list #user_${user.id}`).append(`<td>${user.email}</td>`); 
         $(`#users-list #user_${user.id}`).append(`<td><i class="fa fa-pencil" aria-hidden="true"></i><i class="fa fa-trash" aria-hidden="true"></i></td>`); 
