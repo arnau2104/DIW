@@ -41,39 +41,6 @@ function desencryptPassword(encryptedPassword,salt) {
     edit_bones_files: 1, 
     active: 1,
     is_first_login: 1
-},{
-    id :2, 
-    name: "arnau" , 
-    email: "amarques20733@iesjoanramis.org", 
-    password: encryptedPassword, 
-    salt: salt , 
-    edit_users: 1, 
-    edit_news: 1, 
-    edit_bones_files: 1, 
-    active: 1,
-    is_first_login: 1
-},{
-    id : 3, 
-    name: "peri" , 
-    email: "erikmozos@iesjoanramis.org", 
-    password: encryptedPassword, 
-    salt: salt , 
-    edit_users: 1, 
-    edit_news: 1, 
-    edit_bones_files: 1, 
-    active: 1,
-    is_first_login: 1
-},{
-    id : 4, 
-    name: "luca" , 
-    email: "lucasegui@iesjoanramis.org", 
-    password: encryptedPassword, 
-    salt: salt , 
-    edit_users: 1, 
-    edit_news: 1, 
-    edit_bones_files: 1, 
-    active: 1,
-    is_first_login: 1
 }];
 
 $(()=>{
