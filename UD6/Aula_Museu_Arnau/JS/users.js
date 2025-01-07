@@ -83,6 +83,7 @@ $(()=>{
     if(users == null  ) {
         localStorage.setItem ("users" , JSON.stringify(json_users));
         console.log("admin creat");
+        location.reload();
      
     }else {
         // console.log(users);

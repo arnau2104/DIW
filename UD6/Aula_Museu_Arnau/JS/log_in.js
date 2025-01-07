@@ -12,6 +12,19 @@ function esEmailValid(input) {
      return re.test(String(input).toLowerCase()); // retorna true o flase  
 }
 
+function validPassword(password) {
+    var tieneMayuscula = /[A-Z]/.test(password);
+    var tieneMinuscula = /[a-z]/.test(password);
+    var tieneNumero = /\d/.test(password);
+    var tieneCaracterEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (tieneMayuscula && tieneMinuscula && tieneNumero && tieneCaracterEspecial) {
+        return true; 
+    } else {
+        return false; 
+    }
+}
+
 
 
 
@@ -99,7 +112,7 @@ $(()=> {
         e.preventDefault();
   
         if(repeated_password.val().length != 0) {
-            if(repeated_password.val().length >= 12) {
+            if(repeated_password.val().length >= 12 && validPassword(inputPassword.val()) == true) {
                 if(repeated_password.val() == inputPassword.val()) {
 
                     let salt = generarSalt();
@@ -125,7 +138,7 @@ $(()=> {
                      setTimeout(()=>window.location.href="../Pages/Pagina_Administracio.html",1000);
                 }
             }else {
-                $(".password .errorMessage").text("The password needs minimum 12 characters");
+                $(".password .errorMessage").text("The password needs minimum 12 characters, it must contain uppercase and lowercase letters, numbers and special characters.");
                 $(".log-in-result").text("")
             }
         }
