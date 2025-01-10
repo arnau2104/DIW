@@ -173,3 +173,20 @@ function editParagraph(paragraph) {
   $p.after(input);
   input.focus();
 }
+
+function editTitle(title) {
+  const $h1 = $(title);
+  const currentText = $h1.text();
+  const input = $(`<input class="input-edit-news-title" type="text" placeholder="${currentText}" />`);
+
+  input.on("blur", function() {
+    const newText = $(this).val();
+    $h1.text(newText);
+    $h1.show();
+    $(this).remove();
+  });
+
+  $h1.hide();
+  $h1.after(input);
+  input.focus();
+}

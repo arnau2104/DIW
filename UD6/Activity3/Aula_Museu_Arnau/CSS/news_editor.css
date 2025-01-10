@@ -65,3 +65,22 @@ body {
 .delete-row-btn:hover {
   background-color: #c0392b;
 }
+
+.news-title {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.input-edit-news-title {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  user-select: all;
+  -moz-user-select: all;
+  -webkit-user-select: all;
+
+
+}
