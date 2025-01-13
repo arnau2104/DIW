@@ -100,6 +100,8 @@ $(function() {
       rows.push(row);
     });
 
+     rows.push($(".edit-news-title").text());
+
     const config = JSON.stringify(rows);
     localStorage.setItem("postBuilderConfig", config);
     alert("Configuración guardada en el navegador.");
@@ -114,28 +116,36 @@ $(function() {
     }
 
     const rows = JSON.parse(config);
+    console.log(rows)
     $(".row-container").empty(); // Limpiar todo antes de cargar
     rows.forEach(row => {
-      let newRow = '<div class="row">';
-      row.forEach(column => {
-        newRow += column.length > 1 ? `<div class="column half">` : `<div class="column">`;
-        column.forEach(element => {
-          if (element.type === "paragraph") {
-            newRow += `
-              <div class="element">
-                <p class="editable" onclick="editParagraph(this)">${element.content}</p>
-              </div>`;
-          } else if (element.type === "image") {
-            newRow += `
-              <div class="element">
-                <img src="${element.src}" alt="Imagen">
-              </div>`;
-          }
+      if(!$.isArray(row) ) {
+        $(".edit-news-title").text(row);
+        console.log(row);
+      }else {
+        let newRow = '<div class="row">';
+        row.forEach(column => {
+          newRow += column.length > 1 ? `<div class="column half">` : `<div class="column">`;
+          column.forEach(element => {
+            if (element.type === "paragraph") {
+              newRow += `
+                <div class="element">
+                  <p class="editable" onclick="editParagraph(this)">${element.content}</p>
+                </div>`;
+            } else if (element.type === "image") {
+
+              newRow += `
+                <div class="element">
+                  <img src="${element.src}" alt="Imagen">
+                </div>`;
+            }
+          });
+          newRow += `</div>`;
         });
-        newRow += `</div>`;
-      });
-      newRow += `<button class="delete-row-btn">Eliminar fila</button></div>`;
-      $(".row-container").append(newRow);
+
+        newRow += `<button class="delete-row-btn">Eliminar fila</button></div>`;
+        $(".row-container").append(newRow);
+      }
     });
 
     initializeDroppable();
@@ -175,18 +185,24 @@ function editParagraph(paragraph) {
 }
 
 function editTitle(title) {
-  const $h1 = $(title);
-  const currentText = $h1.text();
+  const $h2 = $(title);
+  const currentText = $h2.text();
   const input = $(`<input class="input-edit-news-title" type="text" placeholder="${currentText}" />`);
 
   input.on("blur", function() {
     const newText = $(this).val();
-    $h1.text(newText);
-    $h1.show();
+    if(newText.length!= 0) {
+    $h2.text(newText);
+    }
+    $h2.show();
     $(this).remove();
+    console.log($(".edit-news-title").text());
+    
   });
 
-  $h1.hide();
-  $h1.after(input);
+  $h2.hide();
+  $h2.after(input);
   input.focus();
+  console.log($h2.text());
 }
+

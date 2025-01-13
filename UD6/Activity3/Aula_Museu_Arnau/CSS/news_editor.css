@@ -81,6 +81,22 @@ body {
   user-select: all;
   -moz-user-select: all;
   -webkit-user-select: all;
+}
 
+.edit-news-title {
+  height: 50px;
+  width: 100%;
+  color: black;
+  font-size: 30px;
+}
 
+#publicar {
+  display: block;
+  padding: 10px;
+  background-color: #09e009;
+  border-radius: 8px;
+  color: #001E33;
+  border-color: #001E33;
+  margin-top: 20px;
+  float: right;
 }

@@ -9,27 +9,28 @@
     <link rel="stylesheet" href="../css/news_editor.css">
 </head>
 <body>
-    <h1>News Editor</h1>
+    <h1>Editor de Notícies</h1>
     
     <div class="toolbox">
-      <h3>Toolbox</h3>
-      <div class="tool" data-type="paragraph">Párrafo</div>
-      <div class="tool" data-type="image">Imagen</div>
+      <h3>Opcions</h3>
+      <div class="tool" data-type="paragraph">Paràgraf</div>
+      <div class="tool" data-type="image">Imatge</div>
     </div>
 
     <div id="builder">
-      <div class="news-title"><h2 onclick="editTitle(this)">Write The News Title</h2></div>
+      <div class="news-title"><h2 class="edit-news-title" onclick="editTitle(this)">Escriu el títol de la notícia</h2></div>
       <div class="row-container"></div>
     </div>
     
-    <label for="column-choice">Número de columnas por fila:</label>
+    <label for="column-choice">Número de columnes per fila:</label>
     <select id="column-choice">
       <option value="1">1 columna</option>
-      <option value="2">2 columnas</option>
+      <option value="2">2 columnes</option>
     </select>
-    <button id="add-row">Añadir Fila</button>
-    <button id="save-config">Guardar Configuración</button>
-    <button id="load-config">Cargar Configuración</button>
+    <button id="add-row">Afegir Fila</button>
+    <button id="save-config">Guardar Configuració</button>
+    <button id="load-config">Cargar Configuració</button>
+    <button id="publicar">Publicar</button>
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
