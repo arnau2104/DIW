@@ -1,5 +1,7 @@
 let likes = document.querySelectorAll(".fa-heart");
 
+document.addEventListener('DOMContentLoaded', ()=> {
+
 likes.forEach((like) => {
     like.addEventListener('click', (e) => {
         if(!like.classList.contains("text-red-600")) {
@@ -9,4 +11,5 @@ likes.forEach((like) => {
         }
    
     });
-  });
+  })
+});

@@ -29,8 +29,8 @@ $(function() {
         } else if (type === "image") {
           newElement = $(
             `<div class="element">
-              <input type="file" accept="image/*" onchange="loadImage(event)" />
-              <img src="" alt="Imagen" style="display: none;">
+              <input  type="file" accept="image/*" onchange="loadImage(event)" />
+              <img class="news-image" src="" alt="Imagen" style="display: none;">
             </div>`
           );
         }
@@ -206,3 +206,44 @@ function editTitle(title) {
   console.log($h2.text());
 }
 
+  // Guardar configuración
+  function publishNews() {
+
+    let allNews = JSON.parse(localStorage.getItem("allNews")) ?? [];
+
+     let news = `
+     
+                <div class="news news-style "> 
+                <a href="./dins_noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">${$(".edit-news-title").text()}</h4></a> 
+                <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                    <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44" src="${$(".news-image").attr('src')}" alt="news 1"></a>
+                </div>
+                <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                    <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                            <p>${$(".editable").text()}</p>
+                        </div>
+                        <a href="./dins_noticia.html"><button class="button-style">Llegir Mes</button></a>
+                    </div>
+                    <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                        <div>
+                            <a href="./news_editor.html"><i class="fa fa-pencil " aria-hidden="true"></i></a>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // console.log(news);
+        
+        allNews.unshift(news)
+
+
+        
+        localStorage.setItem("allNews", JSON.stringify(allNews));
+
+        setTimeout(()=>window.location.href="../pages/noticies.html",1000);
+
+  };

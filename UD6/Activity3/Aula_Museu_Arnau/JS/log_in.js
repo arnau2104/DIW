@@ -135,7 +135,7 @@ $(()=> {
                     })
 
                     $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
-                     setTimeout(()=>window.location.href="../Pages/Pagina_Administracio.html",1000);
+                     setTimeout(()=>window.location.href="../pages/pagina_administracio.html",1000);
                 }
             }else {
                 $(".password .errorMessage").text("The password needs minimum 12 characters, it must contain uppercase and lowercase letters, numbers and special characters.");
@@ -155,7 +155,7 @@ $(()=> {
        
         }else {
             $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
-            setTimeout(()=>window.location.href="../Pages/Pagina_Administracio.html",1000);
+            setTimeout(()=>window.location.href="../pages/pagina_administracio.html",1000);
             // label_repeated_password.hide();
             // repeated_password.hide();
         }
