@@ -1,3 +1,24 @@
+const urlParams = new URLSearchParams(window.location.search);
+const newsId = urlParams.get("newsId");
+console.log(newsId);
+
+if(newsId) {
+  //test
+
+  let allNews = JSON.parse(localStorage.getItem("allNews"));
+  let newsToLoad;
+  
+  allNews.each((news,index) => {
+    if(news({newsId})) {
+      newsToLoad = news;
+      console.log(news({newsId}));
+
+    }
+  })
+  
+}
+
+
 $(function() {
   // Hacer los elementos de la toolbox arrastrables
   $(".tool").draggable({
@@ -210,17 +231,18 @@ function editTitle(title) {
   function publishNews() {
 
     let allNews = JSON.parse(localStorage.getItem("allNews")) ?? [];
+    let contador= allNews.length + 1;
 
      let news = `
      
-                <div class="news news-style "> 
+                <div class="news news-style" id="news${contador}"> 
                 <a href="./dins_noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">${$(".edit-news-title").text()}</h4></a> 
                 <div class="w-72 tablet:w-3/5  intermidium:w-full">
                     <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44" src="${$(".news-image").attr('src')}" alt="news 1"></a>
                 </div>
                 <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
                     <div class="flex flex-col gap-2 items-center w-full h-44 ">
-                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3"> 
+                        <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3 w-full text-pretty"> 
                             <p>${$(".editable").text()}</p>
                         </div>
                         <a href="./dins_noticia.html"><button class="button-style">Llegir Mes</button></a>
@@ -228,13 +250,54 @@ function editTitle(title) {
                     <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
                         <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
                         <div>
-                            <a href="./news_editor.html"><i class="fa fa-pencil " aria-hidden="true"></i></a>
+                           <i class="fa fa-pencil " aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>
         `;
+
+       
+
+            function putDefaulttNews (iterations) {
+
+              let newContador = contador + 1;
+
+              for(let i = 0; i<iterations; i++) {
+
+              let defaultNews = `<div class="news news-style" id="news${newContador++}">
+              <a href="./dins_noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
+              <div class="w-72 tablet:w-3/5  intermidium:w-full">
+                  <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+              </div>
+              <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
+                  <div class="flex flex-col gap-2 items-center w-full h-44 ">
+                      <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3 w-full text-pretty"> 
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                      </div>
+                      <a href="./dins_noticia.html"><button class="button-style">Llegir Mes</button></a>
+                  </div>
+                  <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
+                      <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
+                      <div>
+                          <i class="fa fa-pencil " aria-hidden="true"></i>
+                          <i class="fa fa-heart " aria-hidden="true"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>`;
+          
+          allNews.push(defaultNews);
+              }
+
+            }
+
+            // allNews.shift();
+           
+            putDefaulttNews(8);
+
 
         // console.log(news);
         
