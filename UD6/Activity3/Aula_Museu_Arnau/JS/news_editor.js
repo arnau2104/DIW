@@ -1,3 +1,5 @@
+
+
 const urlParams = new URLSearchParams(window.location.search);
 const newsId = urlParams.get("newsId");
 console.log(newsId);
@@ -6,15 +8,20 @@ if(newsId) {
   //test
 
   let allNews = JSON.parse(localStorage.getItem("allNews"));
-  let newsToLoad;
-  
-  allNews.each((news,index) => {
-    if(news({newsId})) {
-      newsToLoad = news;
-      console.log(news({newsId}));
+  let newsToLoad = allNews.filter(news => news[0] == newsId);
+  let newsContent = newsToLoad[0][1];
+  let newDiv = $('<div class="newsText"></div>').html(newsContent);
+  let newsText = $(".newsText");
+  console.log(newsText);
 
-    }
-  })
+  // console.log(newsText)
+  // console.log(newsToLoad);
+
+  // let text = [{type: "paragraph", content: newsContent(".news-text")}];
+  // console.log(text)
+  
+  // localStorage.setItem("postBuilderConfig", JSON.stringify(newsToLoad));
+  
   
 }
 
@@ -238,12 +245,12 @@ function editTitle(title) {
                 <div class="news news-style" id="news${contador}"> 
                 <a href="./dins_noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">${$(".edit-news-title").text()}</h4></a> 
                 <div class="w-72 tablet:w-3/5  intermidium:w-full">
-                    <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44" src="${$(".news-image").attr('src')}" alt="news 1"></a>
+                    <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44 news-image" src="${$(".news-image").attr('src')}" alt="news 1"></a>
                 </div>
                 <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
                     <div class="flex flex-col gap-2 items-center w-full h-44 ">
                         <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3 w-full text-pretty"> 
-                            <p>${$(".editable").text()}</p>
+                            <p class="news-text">${$(".editable").text()}</p>
                         </div>
                         <a href="./dins_noticia.html"><button class="button-style">Llegir Mes</button></a>
                     </div>
@@ -269,13 +276,13 @@ function editTitle(title) {
               let defaultNews = `<div class="news news-style" id="news${newContador++}">
               <a href="./dins_noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
               <div class="w-72 tablet:w-3/5  intermidium:w-full">
-                  <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44  " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
+                  <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44 news-image " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
               </div>
               <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
                   <div class="flex flex-col gap-2 items-center w-full h-44 ">
                       <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3 w-full text-pretty"> 
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                          <p class="class="news-text"">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
+                          <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
                       </div>
                       <a href="./dins_noticia.html"><button class="button-style">Llegir Mes</button></a>
                   </div>
@@ -289,7 +296,7 @@ function editTitle(title) {
               </div>
           </div>`;
           
-          allNews.push(defaultNews);
+          allNews.push([`news${newContador}`,defaultNews]);
               }
 
             }
@@ -301,7 +308,7 @@ function editTitle(title) {
 
         // console.log(news);
         
-        allNews.unshift(news)
+        allNews.unshift([`news${contador}`,news])
 
 
         
