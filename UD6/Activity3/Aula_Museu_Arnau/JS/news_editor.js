@@ -1,16 +1,14 @@
-
+let user = JSON.parse(localStorage.getItem("userLoged"));
 
 const urlParams = new URLSearchParams(window.location.search);
 const newsId = urlParams.get("newsId");
-console.log(newsId);
-
-
+// console.log(newsId);
 
 if(newsId) {
   //test
   let newsIdToLoad;
   let allNews = JSON.parse(localStorage.getItem("allNews"));
-  console.log(allNews)
+  // console.log(allNews)
   for(let i = 0; i < allNews.length; i++) {
     if(allNews[i][0] == newsId) {
        newsIdToLoad = i;
@@ -18,20 +16,61 @@ if(newsId) {
     }
   }
   
-  loadNews(newsIdToLoad);
+  loadNews(newsIdToLoad);  
 
-  
-
-  // console.log(newsText)
-  // console.log(newsToLoad);
-
-  // let text = [{type: "paragraph", content: newsContent(".news-text")}];
-  // console.log(text)
-  
-  // localStorage.setItem("postBuilderConfig", JSON.stringify(newsToLoad));
-  
   
 }
+
+function loadNews(newsNumber) {
+  const config = JSON.parse(localStorage.getItem("allNews"));
+    if (!config) {
+      alert("No hay configuración guardada.");
+      return;
+    }
+
+   
+    let newsTitle = config[newsNumber][1];
+    const rows = config[newsNumber][4];
+    // console.log(rows)
+    $(".row-container").empty(); // Limpiar todo antes de cargar
+    rows.forEach(row => {
+        let newRow = '<div class="row">';
+        row.forEach(column => {
+          newRow += column.length > 1 ? `<div class="column half">` : `<div class="column">`;
+          column.forEach(element => {
+            if (element.type === "paragraph") {
+              newRow += `
+                <div class="element">
+                  <p class="editable" onclick="editParagraph(this)">${element.content}</p>
+                </div>`;
+            } else if (element.type === "image") {
+
+              newRow += `
+                <div class="element">
+                  <img src="${element.src}" alt="Imagen">
+                </div>`;
+            }
+          });
+          newRow += `</div>`;
+        });
+
+        newRow += `<button class="delete-row-btn">Eliminar fila</button></div>`;
+        $(".row-container").append(newRow);
+      
+    });
+
+    $(".edit-news-title").text(newsTitle);
+
+    // initializeDroppable();
+    // initializeDeleteButtons();
+  // ;
+
+  // initializeDroppable();
+}
+
+
+
+
 
 function printTodayDate() {
   let fecha = new Date();
@@ -69,52 +108,7 @@ function saveRows() {
   return rows;
 }
 
-function loadNews(newsNumber) {
-  const config = JSON.parse(localStorage.getItem("allNews"));
-    if (!config) {
-      alert("No hay configuración guardada.");
-      return;
-    }
 
-    // const config = JSON.parse(config);
-    let newsTitle = config[newsNumber][1];
-    const rows = config[newsNumber][4];
-    console.log(rows)
-    $(".row-container").empty(); // Limpiar todo antes de cargar
-    rows.forEach(row => {
-        let newRow = '<div class="row">';
-        row.forEach(column => {
-          newRow += column.length > 1 ? `<div class="column half">` : `<div class="column">`;
-          column.forEach(element => {
-            if (element.type === "paragraph") {
-              newRow += `
-                <div class="element">
-                  <p class="editable" onclick="editParagraph(this)">${element.content}</p>
-                </div>`;
-            } else if (element.type === "image") {
-
-              newRow += `
-                <div class="element">
-                  <img src="${element.src}" alt="Imagen">
-                </div>`;
-            }
-          });
-          newRow += `</div>`;
-        });
-
-        newRow += `<button class="delete-row-btn">Eliminar fila</button></div>`;
-        $(".row-container").append(newRow);
-      
-    });
-
-    $(".edit-news-title").text(newsTitle);
-
-    initializeDroppable();
-    initializeDeleteButtons();
-  ;
-
-  initializeDroppable();
-}
 
 $(function() {
   // Hacer los elementos de la toolbox arrastrables
@@ -200,14 +194,27 @@ $(function() {
     let allNews = JSON.parse(localStorage.getItem("allNews")) ?? [];
     const rows = saveRows();
     
-
+    let contador = allNews.length;
     let newsTitle = $(".edit-news-title").text();
     let today = printTodayDate();
+    let principalImage = $(".image-preview").find("img").attr("src");
 
      //rows.push($(".edit-news-title").text());
-    let contador = allNews.length;
-    const config =[`news${contador + 1}`,newsTitle, "Arnau",today,rows,0];
-    allNews.unshift(config)
+    
+    const config =[`news${contador + 1}`,newsTitle, user.name,today,rows,principalImage,0];
+    
+    let thisNewsExist = false;
+        allNews.forEach((index,news) => {
+          if(news[0] == newsId) {
+            news[index] = config;
+            thisNewsExist = true;
+            return;
+          }
+        })
+
+        if(thisNewsExist == false) {
+          allNews.unshift(config) 
+        }
     localStorage.setItem("allNews", JSON.stringify(allNews));
     alert("Configuración guardada en el navegador.");
   });
@@ -271,87 +278,69 @@ function editTitle(title) {
   console.log($h2.text());
 }
 
-  // Guardar configuración
+document.querySelector("#image-input").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  base64Image(file).then((base64Image) => {
+   
+   
+  }).catch((error) => {
+    console.error("Error al convertir la imagen:", error);
+  });
+});
+ 
+
+// Publicar noticia
   function publishNews() {
 
     let allNews = JSON.parse(localStorage.getItem("allNews")) ?? [];
-    let contador= allNews.length;
-
-    //  let news = `
-     
-    //             <div class="news news-style" id="news${contador}"> 
-    //             <a href="./dins_noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">${$(".edit-news-title").text()}</h4></a> 
-    //             <div class="w-72 tablet:w-3/5  intermidium:w-full">
-    //                 <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44 news-image" src="${$(".news-image").attr('src')}" alt="news 1"></a>
-    //             </div>
-    //             <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
-    //                 <div class="flex flex-col gap-2 items-center w-full h-44 ">
-    //                     <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3 w-full text-pretty"> 
-    //                         <p class="news-text">${$(".editable").text()}</p>
-    //                     </div>
-    //                     <a href="./dins_noticia.html"><button class="button-style">Llegir Mes</button></a>
-    //                 </div>
-    //                 <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
-    //                     <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
-    //                     <div>
-    //                        <i class="fa fa-pencil " aria-hidden="true"></i>
-    //                         <i class="fa fa-heart" aria-hidden="true"></i>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     `;
-
-       
-
-          //   function putDefaulttNews (iterations) {
-
-          //     let newContador = contador + 1;
-
-          //     for(let i = 0; i<iterations; i++) {
-
-          //     let defaultNews = `<div class="news news-style" id="news${newContador++}">
-          //     <a href="./dins_noticia.html"><h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 ">Transllat de la ballena al museu del Ramis</h4></a>
-          //     <div class="w-72 tablet:w-3/5  intermidium:w-full">
-          //         <a href="./dins_noticia.html"><img class="rounded-md h-40 tablet:h-44 news-image " src="../Assets/Imgs/trastall_balena.JPG" alt="news 1"></a>
-          //     </div>
-          //     <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
-          //         <div class="flex flex-col gap-2 items-center w-full h-44 ">
-          //             <div class="overflow-hidden rounded-md   p-1.5 intermidium:p-3 w-full text-pretty"> 
-          //                 <p class="class="news-text"">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
-          //                 <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
-          //             </div>
-          //             <a href="./dins_noticia.html"><button class="button-style">Llegir Mes</button></a>
-          //         </div>
-          //         <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
-          //             <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
-          //             <div>
-          //                 <i class="fa fa-pencil " aria-hidden="true"></i>
-          //                 <i class="fa fa-heart " aria-hidden="true"></i>
-          //             </div>
-          //         </div>
-          //     </div>
-          // </div>`;
-          
-          // allNews.push([`news${newContador}`,defaultNews]);
-          //     }
-
-          //   }
-
-            // allNews.shift();
-           
-            // putDefaulttNews(8);
-
+    let contador = allNews.length;
 
         // console.log(news);
         let newsTitle = $(".edit-news-title").text();
         let today = printTodayDate();
         let rows = saveRows();
-        const config = [`news${contador + 1}`,newsTitle, "Arnau",today,rows,1];
+       
+        let principalImage =  $(".image-preview img").attr("src"); // Espera el resultado del Base64
+        const config = [`news${contador + 1}`,newsTitle, user.name,today,rows,principalImage,1];
         
-        allNews.unshift(config) 
+        let thisNewsExist = false;
+        for (let i = 0; i < allNews.length; i++) {
+          // console.log(allNews[0], "== ", newsId)
+          if(allNews[i][0] == newsId) {
+            // console.log(allNews[i]);
+             config[0] = newsId;
+             allNews.splice(i,1);
+            //  allNews[i] = config;
+             thisNewsExist = true;
+            console.log("dins")
+            break;
+          }
+        }
+
+        
+          allNews.unshift(config) 
+        
         localStorage.setItem("allNews", JSON.stringify(allNews));
 
         setTimeout(()=>window.location.href="../pages/noticies.html",1000);
 
   };
+
+
+
+  function previewImage(input) {
+    const previewContainer = document.querySelector('.image-preview');
+    
+   
+    previewContainer.innerHTML = ''; //rmeove previous image
+  
+    const file = input.files[0];
+    if (file) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file); 
+      img.alt = 'Imagen principal';
+      previewContainer.appendChild(img);
+    }
+  }
+
+ 

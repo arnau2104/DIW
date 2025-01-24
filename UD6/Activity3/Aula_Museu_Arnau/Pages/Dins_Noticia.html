@@ -27,7 +27,7 @@
                         <li><a href="./fitxa_tecnica_ossos.html">Fitxa Tècnica</li></a>
                         <li><a href="./altres_activitats.html">Altres Activitats</li></a>
                     </ul></li>
-               <li> <a href="#"><p>Pàgina d'Administració</p></a></li>
+               <li> <a href="./pagina_administracio.html"><p>Pàgina d'Administració</p></a></li>
                 </ul>
             </div>
        
@@ -46,39 +46,31 @@
                     <li><a href="./fitxa_tecnica_ossos.html">Fitxa Tècnica</li></a>
                     <li><a href="./altres_activitats.html">Altres Activitats</li></a>
                 </ul></li>
-                <li> <a href="#"><p>Pàgina d'Administració</p></a></li>
+                <li> <a href="./pagina_administracio.html"><p>Pàgina d'Administració</p></a></li>
         </ul>
     </aside>
-    <main class="px-4  flex flex-col items-center  intermidium:px-10 pc:px-56 pc-large:px-72">
+    <main class="px-4  flex flex-col gap-6 items-center  intermidium:px-10 pc:px-56 pc-large:px-72">
         
 
        <div class="news flex flex-col pt-4" >
             
-            <h2 class="font-bold text-center text-2xl intermidium:text-3xl pc:p-2">Transllat de la balena al museu del RAMIS</h2>
-            
-            <img class="rounded-md self-center pc-large:w-11/12 pc-large:mb-2 pc-large:h-[600px]" src="../Assets/Imgs/trastall_balena.JPG" alt="">
+        <h2 class="font-bold text-center text-2xl intermidium:text-3xl pc:p-2 news-title"></h2>
+        
+        <img class="rounded-md self-center pc-large:w-11/12 pc-large:mb-2 pc-large:h-[600px] news-image" src  alt="">
 
-            <div class="flex justify-between text-lg items-center border-b-2 border-black intermidium:p-1  mt-1 mb-2 pc:text-xl">
-                <i class="fa fa-user-circle-o" aria-hidden="true"> Nom usuari</i>
-                <div>
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                    <i class="fa fa-heart text-red-600" aria-hidden="true"></i>
-                </div>
+        <div class="flex justify-between text-lg items-center border-b-2 border-black intermidium:p-1  mt-1 mb-2 pc:text-xl">
+            <i class="fa fa-user-circle-o news-autor" aria-hidden="true"></i>
+            <div>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-heart text-red-600" aria-hidden="true"></i>
             </div>
+        </div>
 
-            <div class="news-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
-                <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
-                <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
-                <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae erat convallis, ultricies eros eget, cursus purus. Fusce sagittis, risus sit amet feugiat scelerisque, nisi lorem posuere dui, in fermentum arcu arcu ac quam. Quisque ut augue auctor, aliquet nisl eget, sollicitudin est.</p>
-                <p>Mauris id massa ut justo tempus tincidunt. Duis lacinia libero non dolor pharetra, ac vestibulum nisl volutpat. Curabitur sit amet eros nec nisi varius varius at sit amet orci. Proin vulputate est et libero convallis, nec eleifend dolor aliquam.</p>
+        <div class="news-text flex flex-col" style="gap: 20px;">
 
-            </div>
+        </div>
 
-       </div>
+   </div>
     
         
        
@@ -156,6 +148,7 @@
     </aside>
     <script src="../js/menu.js"></script>
     <script src="../js/accesibility.js"></script>
-    <script src="../js/noticies.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../JS/dins_noticia.js"></script>
 </body>
 </html>

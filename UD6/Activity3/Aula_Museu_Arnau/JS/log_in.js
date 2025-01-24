@@ -135,6 +135,7 @@ $(()=> {
                     })
 
                     $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
+                    localStorage.setItem("userLoged",JSON.stringify(user_loged) )
                      setTimeout(()=>window.location.href="../pages/pagina_administracio.html",1000);
                 }
             }else {
@@ -155,6 +156,7 @@ $(()=> {
        
         }else {
             $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
+            localStorage.setItem("userLoged",JSON.stringify(user_loged) )
             setTimeout(()=>window.location.href="../pages/pagina_administracio.html",1000);
             // label_repeated_password.hide();
             // repeated_password.hide();
