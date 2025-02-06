@@ -1,9 +1,14 @@
-import { saveNews } from "./firebase.js";
+import { saveNews,getNews,onSnapshot,collection,db } from "./firebase.js";
 
 let user = JSON.parse(localStorage.getItem("userLoged"));
 
 const urlParams = new URLSearchParams(window.location.search);
 const newsId = urlParams.get("newsId");
+let dbNews = [];
+saveNewsInVariable();
+
+
+
 // console.log(newsId);
 
 if(newsId) {
@@ -20,7 +25,19 @@ if(newsId) {
   
   loadNews(newsIdToLoad);  
 
+ 
   
+}
+
+function saveNewsInVariable() {
+  onSnapshot(collection(db,"news"),(querySnapshot)=> {
+    
+    querySnapshot.forEach(doc => {
+      let news = doc.data()
+      dbNews.push([doc.id, news]);
+    })
+
+  })
 }
 
 function loadNews(newsNumber) {
@@ -201,23 +218,29 @@ $(function() {
     let today = printTodayDate();
     let principalImage = $(".image-preview").find("img").attr("src");
 
-     //rows.push($(".edit-news-title").text());
     
-    const config =[`news${contador + 1}`,newsTitle, user.name,today,rows,principalImage,0];
     
-    let thisNewsExist = false;
-        allNews.forEach((index,news) => {
-          if(news[0] == newsId) {
-            news[index] = config;
-            thisNewsExist = true;
-            return;
-          }
-        })
+    //REVISAR DESPRES
+    // let thisNewsExist = false;
+    //     dbNews.forEach((index,news) => {
+    //       if(news[0] == newsId) {
+    //         news[index] = config;
+    //         thisNewsExist = true;
+    //         return;
+    //       }
+    //     })
 
-        if(thisNewsExist == false) {
-          allNews.unshift(config) 
-        }
-    localStorage.setItem("allNews", JSON.stringify(allNews));
+    //     if(thisNewsExist == false) {
+    //       dbNews.unshift(config) 
+    //     }
+    
+        saveNewsInVariable(); 
+        let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;
+        
+        
+     
+        
+        saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"0")
     alert("Configuración guardada en el navegador.");
   });
 
@@ -299,7 +322,7 @@ editTitle(e.target);
     let allNews = JSON.parse(localStorage.getItem("allNews")) ?? [];
     let contador = allNews.length;
 
-        // console.log(news);
+       
         let newsTitle = $(".edit-news-title").text();
         let today = printTodayDate();
         let rows = saveRows();
@@ -307,6 +330,7 @@ editTitle(e.target);
         let principalImage =  $(".image-preview img").attr("src");
         const config = [`news${contador + 1}`,newsTitle, user.name,today,rows,principalImage,1];
         
+        //REVISAR
         // let thisNewsExist = false;
         // for (let i = 0; i < allNews.length; i++) {
         //   // console.log(allNews[0], "== ", newsId)
@@ -322,12 +346,16 @@ editTitle(e.target);
         // }
 
         
-        //   allNews.unshift(config) 
+       
+        saveNewsInVariable(); 
+        let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;
         
-        // localStorage.setItem("allNews", JSON.stringify(allNews));
-        saveNews(`news2`,newsTitle, user.name,today,rows,principalImage,1)
+        
+       
+        
+        saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"1")
 
-        // setTimeout(()=>window.location.href="../pages/noticies.html",1000);
+         setTimeout(()=>window.location.href="../pages/noticies.html",1000);
 
   };
 
@@ -341,7 +369,7 @@ editTitle(e.target);
     const previewContainer = document.querySelector('.image-preview');
     
    
-    previewContainer.innerHTML = ''; //rmeove previous image
+    previewContainer.innerHTML = ''; 
   
     const file = input.files[0];
     if (file) {

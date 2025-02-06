@@ -1,17 +1,19 @@
- // Import the functions you need from the SDKs you need
- import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
- // TODO: Add SDKs for Firebase products that you want to use
- import { getFirestore, collection, doc, getDocs ,setDoc } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js';  
+ 
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+ import { getFirestore, collection, doc, getDocs ,setDoc,onSnapshot } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js';  
 
+ // TODO: Add SDKs for Firebase products that you want to use
+ // https://firebase.google.com/docs/web/setup#available-libraries
 
  // Your web app's Firebase configuration
  const firebaseConfig = {
-   apiKey: "AIzaSyBsV_Hagj3OhT3vUZK0ZIspklvRPXFB250",
-   authDomain: "aula-museu.firebaseapp.com",
-   projectId: "aula-museu",
-   storageBucket: "aula-museu.firebasestorage.app",
-   messagingSenderId: "673120048714",
-   appId: "1:673120048714:web:2d60bb97d04accc53838b3"
+   apiKey: "AIzaSyDqMjWUbZPYwyAWA37HgXhvEJDiaFJH-hs",
+   authDomain: "aula-museu-912b9.firebaseapp.com",
+   projectId: "aula-museu-912b9",
+   storageBucket: "aula-museu-912b9.firebasestorage.app",
+   messagingSenderId: "582513820989",
+   appId: "1:582513820989:web:ad7bb9f68ad9e5bc453154"
  };
 
  // Initialize Firebase
@@ -21,6 +23,7 @@
 
  export const saveNews = async (id,news_title,autor,news_date,news_content,news_cover,status)=> {
     try {
+      console.log(news_content);
         await setDoc(doc(db, "news", id), {
             news_title,
             autor,
@@ -37,7 +40,9 @@
 
 }
 
-
+export {
+  onSnapshot,collection,db
+}
 
 export const getNews = async ()=> {
     const snapshot = await getDocs(collection(db,"news"));

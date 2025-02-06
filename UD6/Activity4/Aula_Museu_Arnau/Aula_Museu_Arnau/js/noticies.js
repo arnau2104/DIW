@@ -1,15 +1,21 @@
+import { getNews,onSnapshot,collection,db } from "./firebase.js";
 
-let allNews = JSON.parse(localStorage.getItem("allNews"));
+
+// let allNews = [];
+
+// function saveNewsInVariable() {
+//   onSnapshot(collection(db,"news"),(querySnapshot)=> {
+    
+//     querySnapshot.forEach(doc => {
+//       let news = doc.data()
+//       allNews.push([doc.id,news]);
+//     })
+
+//   })
+// }
 
 $(()=>{
-
-let publishedNews = allNews.filter(news => news[6] == 1);
-// console.log(publishedNews);
-    // console.log(allNews)
-    if(publishedNews) {
-      $.each(allNews, function(index,news) {
-
-          // console.log(news);
+  
 
           function printNewsContent(rows) {
               let html = '';
@@ -44,21 +50,29 @@ let publishedNews = allNews.filter(news => news[6] == 1);
               return html;
             }
 
-          let newsToPrint = `
-                      <div class="news news-style" id="${news[0]}"> 
-                      <h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 cursor-pointer news-title">${news[1]}</h4>
+            onSnapshot(collection(db,"news"),  (querySnapshot)=> {
+              let newsToPrint = "";
+              querySnapshot.forEach((doc) => {
+                  
+              
+                      const news = doc.data();
+                      
+      
+                       newsToPrint += `
+                      <div class="news news-style" id="${doc.id}"> 
+                      <h4 class="font-bold  text-center text-xl intermidium:mb-2 intermidium:px-2 cursor-pointer news-title">${news.news_title}</h4>
                       <div class="w-72 tablet:w-3/5  intermidium:w-full">
-                          <img class="div-news-image rounded-md h-40 tablet:h-44" src="${news[5]}" alt="news 1">
+                          <img class="div-news-image rounded-md h-40 tablet:h-44" src=${news.news_cover} alt="news 1">
                       </div>
                       <div class="flex flex-col w-11/12 h-full intermidium:w-full intermidium:h-52" >
                           <div class="flex flex-col gap-2 items-center w-full h-44 ">
                               <div class="flex flex-col overflow-hidden rounded-md p-1.5 intermidium:p-3 w-full text-pretty news_content">
-                                  ${printNewsContent(news[4])}           
+                                  ${printNewsContent(JSON.parse(news.news_content))}           
                               </div>
-                             <button class=" text-center button-style llegir-mes">Llegir Mes</button>
+                             <button class=" text-center button-style llegir-mes" onClick="redirectToNoticia()">Llegir Mes</button>
                           </div>
                           <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
-                              <i class="fa fa-user-circle-o" aria-hidden="true"> ${news[2]}</i>
+                              <i class="fa fa-user-circle-o" aria-hidden="true"> ${news.autor}</i>
                               <div>
                                   <i class="fa fa-pencil cursor-pointer" aria-hidden="true"></i>
                                   <i class="fa fa-trash" aria-hidden="true"></i>
@@ -68,12 +82,18 @@ let publishedNews = allNews.filter(news => news[6] == 1);
                       </div>
                   </div>
               `;
+              
+                                                      
+              })
+              // console.log(newsToPrint);
+              $(".news-container").html(newsToPrint);
+          
+        
 
-          $(".news-container").append(newsToPrint);
-      });
-  }else {
-    console.log("allNews empty")
-  }
+             
+      })
+
+         
 
     let likes = document.querySelectorAll(".fa-heart");
 
@@ -106,11 +126,15 @@ let publishedNews = allNews.filter(news => news[6] == 1);
           window.location.href = `../pages/dins_noticia.html?newsId=${encodeURIComponent(news.id)}`;
         })
 
-        news.querySelector(".div-news-image").addEventListener('click', ()=> {
-          window.location.href = `../pages/dins_noticia.html?newsId=${encodeURIComponent(news.id)}`;
-        })
+        // news.querySelector(".llegir-mes").addEventListener('click', ()=> {
+        //   window.location.href = `../pages/dins_noticia.html?newsId=${encodeURIComponent(news.id)}`;
+        // })
 
-        news.querySelector(".llegir-mes").addEventListener('click', ()=> {
+        const  redirectToNoticia =  ()=> {
+          window.location.href = `../pages/dins_noticia.html?newsId=${encodeURIComponent(news.id)}`;
+        }
+
+        news.querySelector(".div-news-image").addEventListener('click', ()=> {
           window.location.href = `../pages/dins_noticia.html?newsId=${encodeURIComponent(news.id)}`;
         })
 
