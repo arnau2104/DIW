@@ -1,16 +1,7 @@
+import { getNews,onSnapshot,collection,db,deleteNews } from "./firebase.js";
 
-let likes = document.querySelectorAll(".fa-heart");
 
-likes.forEach((like) => {
-    like.addEventListener('click', (e) => {
-        if(!like.classList.contains("text-red-600")) {
-            e.target.classList.add("text-red-600");
-        }else {
-            e.target.classList.remove("text-red-600");
-        }
-   
-    });
-  })
+
 
 
   function printNewsContent(rows) {
@@ -56,20 +47,31 @@ console.log(newsId);
 if(newsId) {
   //test
   let newsToLoad;
-  let allNews = JSON.parse(localStorage.getItem("allNews"));
-//   console.log(allNews);
-  for(let i = 0; i < allNews.length; i++) {
-    if(allNews[i][0] == newsId) {
-       newsToLoad = allNews[i];
-      break;
-    }
-  }
+  
 
+  onSnapshot(collection(db,"news"), (querySnapshot)=> {
 
-  $(".news-title").html(newsToLoad[1]);
-   $(".news-image").attr("src", newsToLoad[5]);
-  $(".news-autor").html(newsToLoad[2]);
-  $(".news-text").html(printNewsContent(newsToLoad[4]));
+    querySnapshot.forEach((doc) => {
+      let news = doc.data();
+
+      if(doc.id == newsId) {
+        $(".news-title").html(news.news_title);
+        $(".news-image").attr("src", news.news_cover);
+        $(".news-autor").html(news.autor);
+        $(".news-text").html(printNewsContent(JSON.parse(news.news_content)));
+      }
+    })
+
+  })
+
+  $(".news").on("click", ".fa-heart", function () {
+    $(this).toggleClass("text-red-600");
+  })
+  
+  $(".news").on('click',".fa-pencil", function () {
+      window.location.href = `../pages/news_editor.html?newsId=${encodeURIComponent(newsId)}`;
+  })
+  
   
     
   

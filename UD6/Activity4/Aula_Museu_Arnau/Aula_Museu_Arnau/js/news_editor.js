@@ -12,21 +12,22 @@ saveNewsInVariable();
 // console.log(newsId);
 
 if(newsId) {
-  //test
-  let newsIdToLoad;
-  let allNews = JSON.parse(localStorage.getItem("allNews"));
-  // console.log(allNews)
-  for(let i = 0; i < allNews.length; i++) {
-    if(allNews[i][0] == newsId) {
-       newsIdToLoad = i;
-      break;
-    }
-  }
-  
-  loadNews(newsIdToLoad);  
+   
+  onSnapshot(collection(db,"news"),  (querySnapshot)=> {
+   
+    querySnapshot.forEach((doc) => {
+        
+    
+            const news = doc.data();
+          //  console.log("news from db:" , doc.id, "newstoImport: " , newsId) 
+      if(doc.id == newsId){
+        loadNews(news);
+      }
+    
+                                            
+    }) 
+})
 
- 
-  
 }
 
 function saveNewsInVariable() {
@@ -40,16 +41,18 @@ function saveNewsInVariable() {
   })
 }
 
-function loadNews(newsNumber) {
-  const config = JSON.parse(localStorage.getItem("allNews"));
+function loadNews(newsToLoad) {
+  const config = newsToLoad;
     if (!config) {
       alert("No hay configuración guardada.");
       return;
     }
 
+    console.log(newsToLoad)
    
-    let newsTitle = config[newsNumber][1];
-    const rows = config[newsNumber][4];
+    let newsTitle = newsToLoad.news_title;
+    let newsCover = newsToLoad.news_cover
+    const rows = JSON.parse(config.news_content);
     // console.log(rows)
     $(".row-container").empty(); // Limpiar todo antes de cargar
     rows.forEach(row => {
@@ -77,14 +80,8 @@ function loadNews(newsNumber) {
         $(".row-container").append(newRow);
       
     });
-
+    $(".image-preview").append(`<img src="${newsCover}">`);
     $(".edit-news-title").text(newsTitle);
-
-    // initializeDroppable();
-    // initializeDeleteButtons();
-  // ;
-
-  // initializeDroppable();
 }
 
 
@@ -113,10 +110,17 @@ function saveRows() {
             content: $(this).find("p").text()
           });
         } else if ($(this).find("img").length) {
-          column.push({
-            type: "image",
-            src: $(this).find("img").attr("src")
-          });
+          let contentImage = "";
+          getBase64FromFile($(".content-image")[0].files[0],function (base64){
+            contentImage = base64;
+            column.push({
+              type: "image",
+              src: contentImage
+            });
+    
+            
+          })
+          
         }
       });
       row.push(column);
@@ -160,7 +164,7 @@ $(function() {
         } else if (type === "image") {
           newElement = $(
             `<div class="element">
-              <input  type="file" accept="image/*" onchange="loadImage(event)" />
+              <input class="content-image"  type="file" accept="image/*" onchange="loadImage(event)" />
               <img class="news-image" src="" alt="Imagen" style="display: none;">
             </div>`
           );
@@ -216,8 +220,17 @@ $(function() {
     let contador = allNews.length;
     let newsTitle = $(".edit-news-title").text();
     let today = printTodayDate();
-    let principalImage = $(".image-preview").find("img").attr("src");
+    let principalImage ="";
+    getBase64FromFile($("#image-input")[0].files[0],function (base64){
+      principalImage = base64;
+      saveNewsInVariable(); 
+      let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;         
+              
+      
+      saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"0")
 
+      setTimeout(()=>window.location.href="../pages/noticies.html",1000);
+    })
     
     
     //REVISAR DESPRES
@@ -234,13 +247,6 @@ $(function() {
     //       dbNews.unshift(config) 
     //     }
     
-        saveNewsInVariable(); 
-        let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;
-        
-        
-     
-        
-        saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"0")
     alert("Configuración guardada en el navegador.");
   });
 
@@ -314,6 +320,17 @@ editTitle(e.target);
 
 })
 
+function getBase64FromFile(img, callback){
+  let fileReader = new FileReader();
+  fileReader.addEventListener('load', function(e){
+
+    callback(fileReader.result);
+  });
+  fileReader.readAsDataURL(img);
+}
+
+
+
 
 
 // Publicar noticia
@@ -326,9 +343,18 @@ editTitle(e.target);
         let newsTitle = $(".edit-news-title").text();
         let today = printTodayDate();
         let rows = saveRows();
-       
-        let principalImage =  $(".image-preview img").attr("src");
-        const config = [`news${contador + 1}`,newsTitle, user.name,today,rows,principalImage,1];
+         console.log($("#image-input")[0]);
+        let principalImage ="";
+        getBase64FromFile($("#image-input")[0].files[0],function (base64){
+          principalImage = base64;
+          saveNewsInVariable(); 
+          let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;         
+                  
+          
+          saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"1")
+  
+          setTimeout(()=>window.location.href="../pages/noticies.html",1000);
+        })
         
         //REVISAR
         // let thisNewsExist = false;
@@ -344,18 +370,9 @@ editTitle(e.target);
         //     break;
         //   }
         // }
-
-        
+      
        
-        saveNewsInVariable(); 
-        let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;
-        
-        
        
-        
-        saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"1")
-
-         setTimeout(()=>window.location.href="../pages/noticies.html",1000);
 
   };
 

@@ -1,7 +1,7 @@
  
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
- import { getFirestore, collection, doc, getDocs ,setDoc,onSnapshot } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js';  
+ import { getFirestore, collection, doc, getDocs ,setDoc,onSnapshot,deleteDoc } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js';  
 
  // TODO: Add SDKs for Firebase products that you want to use
  // https://firebase.google.com/docs/web/setup#available-libraries
@@ -48,3 +48,7 @@ export const getNews = async ()=> {
     const snapshot = await getDocs(collection(db,"news"));
     return snapshot.docs.map(doc => doc.data()); // Devuelve los datos de las tareas
   } 
+
+  export const deleteNews = async (newsToDelete)=> {
+    await deleteDoc(doc(db,"news",newsToDelete));
+  }
