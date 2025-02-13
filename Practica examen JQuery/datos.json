@@ -1,18 +1,8 @@
- 
- [{
-        "nombre": "Carlos",
-        "edad": 28,
-        "pais": "México"
-    },
-    {
-        "nombre": "Peri",
-        "edad": 8,
-        "pais": "Andaluxz"
+{
+    "usuarios": {
+      "1": { "nombre": "Juan", "edad": 25 },
+      "2": { "nombre": "Ana", "edad": 30 },
+      "3": { "nombre": "Luis", "edad": 22 }
     }
-    ,
-    {
-        "nombre": "Cuquitals",
-        "edad": 156,
-        "pais": "Pensilavibna"
-    }
- ]
+  }
+  

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase y jQuery getJSON</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Lista de Usuarios</h2>
+    <button id="cargarDatos">Cargar Usuarios</button>
+    <ul id="listaUsuarios"></ul>
+
+
+    <script type="module">
+        import {saveTask} from "./firebase.js"
+
+        $(document).ready(function(){
+            $("#cargarDatos").click(function(){
+
+                let botonou = $("<button>").text("Botón")
+
+                $("this").after(botonou);
+               
+                const task = []
+                $.getJSON('datos.json', function(data) {
+                    $("#listaUsuarios").empty(); // Limpiar la lista antes de cargar
+                    $.each(data.usuarios, function(key, value) {
+                        saveTask({
+                            id:key,nombre:value.nombre, edad: value.edad})
+                        // console.log(task)
+                    });
+                }).fail(function() {
+                    alert("Error al obtener datos de Firebase");
+                });
+               
+            });
+        });
+    </script>
+
+</body>
+</html>.
+

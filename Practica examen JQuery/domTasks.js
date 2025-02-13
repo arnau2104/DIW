@@ -1,4 +1,4 @@
-import { saveTask,saveTaskWithId,deletTask } from "./firebase.js";
+import { saveTask,saveTaskWithId,deletTask,editTask } from "./firebase.js";
 $(()=> {
     console.log("hola")
   
@@ -26,6 +26,16 @@ $(()=> {
 
         deletTask("LdmhLgsak1x4OOAxxYdu");
         console.log("deleted")
+    })
+
+    $("#edit").on('click',(e)=> {
+        e.preventDefault();
+        const taskName = $("#taskName").val();
+        const taskDescription = $("#description").val();
+       
+             editTask("1",{taskDescription:`${taskDescription}`, taskName: `${taskName}`})
+        
+        
     })
     
 })
