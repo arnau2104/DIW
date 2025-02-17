@@ -99,27 +99,42 @@ function printTodayDate() {
 
 function saveRows() {
   const rows = [];
-  $(".row").each(function() {
+  $(".row").each(async function() {
     const row = [];
     $(this).find(".column").each(function() {
       const column = [];
-      $(this).children(".element").each(function() {
+      $(this).children(".element").each(async function() {
         if ($(this).find("p").length) {
           column.push({
             type: "paragraph",
             content: $(this).find("p").text()
           });
         } else if ($(this).find("img").length) {
-          let contentImage = "";
-          getBase64FromFile($(".content-image")[0].files[0],function (base64){
-            contentImage = base64;
-            column.push({
-              type: "image",
-              src: contentImage
-            });
-    
-            
-          })
+          const imagePromises = [];
+          
+          $(".content-image").each(function(index, element) {
+            // Verifica si se seleccionó un archivo
+            if (element.files.length > 0) {
+              
+                const imagePromise = new Promise((resolve) => { 
+                  getBase64FromFile(element.files[0], function(base64) {
+                    
+                    column.push({
+                      type: "image",
+                      src: base64
+                    });
+
+                    resolve();
+                  });
+                });
+
+                imagePromise.push(imagePromise);
+            } else {
+              console.log("No se ha seleccionado ninguna imagen en el input", index);
+            }
+          });
+
+          await Promise.all(imagePromises);
           
         }
       });

@@ -1,3 +1,4 @@
+import { onSnapshot,collection,db,saveUsers } from "./firebase.js";
 const salt = generarSalt();
 let userPassword = "Ramis20.";
 let encryptedPassword = encryptPassword(userPassword,salt);
@@ -30,30 +31,28 @@ function desencryptPassword(encryptedPassword,salt) {
 
 
 
- let json_users =  [{
-    id : 1, 
-    name: "admin" , 
-    email: "desenvolupador@iesjoanramis.org", 
-    password: encryptedPassword, 
-    salt: salt , 
-    edit_users: 1, 
-    edit_news: 1, 
-    edit_bones_files: 1, 
-    active: 1,
-    is_first_login: 1
-}];
+//  let json_users =  [{
+//     id : 1, 
+//     name: "admin" , 
+//     email: "desenvolupador@iesjoanramis.org", 
+//     password: encryptedPassword, 
+//     salt: salt , 
+//     edit_users: 1, 
+//     edit_news: 1, 
+//     edit_bones_files: 1, 
+//     active: 1,
+//     is_first_login: 1
+// }];
 
 $(()=>{
 
-    let users = JSON.parse(localStorage.getItem("users")) ?? null;
+    // let users = JSON.parse(localStorage.getItem("users")) ?? null;
     
-    if(users == null  ) {
-        localStorage.setItem ("users" , JSON.stringify(json_users));
+    
+        saveUsers("1","admin","desenvolupador@iesjoanramis.org",encryptedPassword,salt,1,1,1,1,1);
         console.log("admin creat");
-        location.reload();
+        // location.reload();
      
-    }else {
-        // console.log(users);
-    };
+   
 
 });

@@ -36,8 +36,6 @@
       } catch(error) {
         console.log("error saving news with custom ID:", error)
       }
-    
-
 }
 
 export {
@@ -52,3 +50,23 @@ export const getNews = async ()=> {
   export const deleteNews = async (newsToDelete)=> {
     await deleteDoc(doc(db,"news",newsToDelete));
   }
+
+  export const saveUsers = async (id,name,email,password,salt,edit_users,edit_news,edit_bone_files,active, is_first_log_in)=> {
+    try {
+     
+        await setDoc(doc(db, "users", id), {
+            name,
+            email,
+            password,
+            salt,
+            edit_users,
+            edit_news,
+            edit_bone_files,
+            active,
+            is_first_log_in
+        });
+        console.log("User saved with custom ID:", id);
+      } catch(error) {
+        console.log("Error saving user with custom ID:", error)
+      }
+}
