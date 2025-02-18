@@ -1,11 +1,13 @@
 import { saveNews,getNews,onSnapshot,collection,db } from "./firebase.js";
 
 let user = JSON.parse(localStorage.getItem("userLoged"));
+let thisNewsExist = false
 
 const urlParams = new URLSearchParams(window.location.search);
 const newsId = urlParams.get("newsId");
 let dbNews = [];
 saveNewsInVariable();
+let activeNews = [];
 
 
 
@@ -22,6 +24,8 @@ if(newsId) {
           //  console.log("news from db:" , doc.id, "newstoImport: " , newsId) 
       if(doc.id == newsId){
         loadNews(news);
+        thisNewsExist = true;
+        activeNews = [doc.id,news];
       }
     
                                             
@@ -232,35 +236,34 @@ $(function() {
     let allNews = JSON.parse(localStorage.getItem("allNews")) ?? [];
     const rows = saveRows();
     
+   
     let contador = allNews.length;
     let newsTitle = $(".edit-news-title").text();
     let today = printTodayDate();
     let principalImage ="";
-    getBase64FromFile($("#image-input")[0].files[0],function (base64){
-      principalImage = base64;
-      saveNewsInVariable(); 
-      let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;         
-              
-      
-      saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"0")
+    // console.log(thisNewsExist ? newsId : `news${+lastNewsId + 1}`);
+    console.log(activeNews)
+
+    if($("#image-input")[0].files[0]) {
+      getBase64FromFile($("#image-input")[0].files[0],function (base64){
+        principalImage = base64;
+         saveNewsInVariable(); 
+        let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;         
+                
+        console.log(`news${thisNewsExist ? newsId : +lastNewsId + 1}`)
+         saveNews(thisNewsExist ? newsId : `news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"0")
+  
+         setTimeout(()=>window.location.href="../pages/noticies.html",1000);
+      })
+    }else {
+      console.log(`news${thisNewsExist ? newsId : +lastNewsId + 1}`)
+      saveNews(thisNewsExist ? newsId : `news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),activeNews[1].news_cover,"0")
 
       setTimeout(()=>window.location.href="../pages/noticies.html",1000);
-    })
+    }
+   
     
-    
-    //REVISAR DESPRES
-    // let thisNewsExist = false;
-    //     dbNews.forEach((index,news) => {
-    //       if(news[0] == newsId) {
-    //         news[index] = config;
-    //         thisNewsExist = true;
-    //         return;
-    //       }
-    //     })
-
-    //     if(thisNewsExist == false) {
-    //       dbNews.unshift(config) 
-    //     }
+   
     
     alert("Configuración guardada en el navegador.");
   });
@@ -366,26 +369,12 @@ function getBase64FromFile(img, callback){
           let lastNewsId = dbNews.length > 0 ? dbNews[dbNews.length - 1][0].slice(-1) : 0;         
                   
           
-          saveNews(`news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"1")
+          saveNews(thisNewsExist ? newsId : `news${+lastNewsId + 1}`,newsTitle, user.name,today,JSON.stringify(rows),principalImage,"1")
   
           setTimeout(()=>window.location.href="../pages/noticies.html",1000);
         })
         
-        //REVISAR
-        // let thisNewsExist = false;
-        // for (let i = 0; i < allNews.length; i++) {
-        //   // console.log(allNews[0], "== ", newsId)
-        //   if(allNews[i][0] == newsId) {
-        //     // console.log(allNews[i]);
-        //      config[0] = newsId;
-        //      allNews.splice(i,1);
-        //     //  allNews[i] = config;
-        //      thisNewsExist = true;
-        //     console.log("dins")
-        //     break;
-        //   }
-        // }
-      
+       
        
        
 

@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muntatge de la balena</title>
+    <title>Crear Usuari</title>
     <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../sass/common.css">
-    <link rel="stylesheet" href="../css/pagina_administracio.css">
-   
 </head>
 <body>
     <header>
@@ -51,19 +49,40 @@
         </ul>
     </aside>
     <main>
-       
-        <h1>Pagina d'Administració</h1>
 
-        <div id="container">
+        <h1>Crear Usuari</h1>
 
-            <table id="users-list">
-                <tbody>
-                    
-                </tbody>
-            </table>
+        <form>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom">
 
-        </div>
-        
+            <label for="email">Correu Electronic</label>
+            <input type="text" id="email" name="email">
+
+            <label for="password">Contrassenya</label>
+            <input type="text" id="password" name="password">
+
+            <label for="edit_users">Editar Usuaris</label>
+            <input type="checkbox" name="edit_users" id="edit_users">
+
+            <label for="edit_users">Editar Noticies</label>
+            <input type="checkbox" name="edit_news" id="edit_news">
+
+            <label for="edit_users">Editar Ossos</label>
+            <input type="checkbox" name="edit_bone_files" id="edit_bone_files">
+
+            <label for="status">Estat</label>
+            <select name="status" id="status">
+                <option value="1">Actiu</option>
+                <option value="0">Deshabilitat</option>
+            </select>
+
+            <button id="btn-crear-usuari">Crear</button>
+
+        </form>
+
+
+
     </main>
     <i class="fa fa-universal-access" id="accesibilityIcon" aria-hidden="true"></i>
     <footer>
@@ -139,7 +158,6 @@
     <script src="../JS/accesibility.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>  
-    <script type="module" src="../JS/pagina_administracio.js"></script>
     <script type="module" src="../js/users.js"></script>
 </body>
 </html>

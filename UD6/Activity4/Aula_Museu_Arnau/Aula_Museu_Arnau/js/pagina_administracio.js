@@ -83,6 +83,9 @@ $(()=>{
     console.log(users.length);
     $('<button class="btn-create-user"> Crear Usuari </button>').insertBefore("#users-list");
     
+    $(document).on('click', '.btn-create-user', ()=> {
+        setTimeout(()=>window.location.href="../pages/crear_usuari.html",1000);
+    })
 
     if($(window).width() >= 860) {
         // console.log("pc mode"); 
