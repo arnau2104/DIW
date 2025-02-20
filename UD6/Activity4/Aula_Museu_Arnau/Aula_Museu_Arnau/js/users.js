@@ -1,4 +1,4 @@
-import { onSnapshot,collection,db,saveUsers } from "./firebase.js";
+import { onSnapshot,collection,db,saveUser } from "./firebase.js";
 const salt = generarSalt();
 let userPassword = "Ramis20.";
 let encryptedPassword = encryptPassword(userPassword,salt);
@@ -49,7 +49,7 @@ $(()=>{
     // let users = JSON.parse(localStorage.getItem("users")) ?? null;
     
     
-        saveUsers("1","admin","desenvolupador@iesjoanramis.org",encryptedPassword,salt,1,1,1,1,1);
+        saveUser("1","admin","desenvolupador@iesjoanramis.org",encryptedPassword,salt,1,1,1,1,1);
         console.log("admin creat");
         // location.reload();
      

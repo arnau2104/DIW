@@ -6,6 +6,7 @@
     <title>Crear Usuari</title>
     <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../sass/common.css">
+    <link rel="stylesheet" href="../css/crear_usuari.css">
 </head>
 <body>
     <header>
@@ -50,36 +51,56 @@
     </aside>
     <main>
 
-        <h1>Crear Usuari</h1>
+       
 
-        <form>
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom">
+        <div class="div-form">
+            <h1>Crear Usuari</h1>
 
-            <label for="email">Correu Electronic</label>
-            <input type="text" id="email" name="email">
+            <form name="form_crear_usuari" class="form-crear-usuari">
+                <div class="div-inputs">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+                
+                <div class="div-inputs">
+                    <label for="email">Correu Electronic</label>
+                    <input type="text" id="email" name="email">
+                </div>
 
-            <label for="password">Contrassenya</label>
-            <input type="text" id="password" name="password">
+                <div class="div-inputs">
+                    <label for="password">Contrassenya</label>
+                    <input type="text" id="password" name="password">
+                </div>
 
-            <label for="edit_users">Editar Usuaris</label>
-            <input type="checkbox" name="edit_users" id="edit_users">
+                <!-- <div class="div-permisos"> -->
+                    <div class="checkbox-permisos">
+                        <div>
+                            <label for="edit_users">Editar Usuaris</label>
+                            <input type="checkbox" name="edit_users" id="edit_users">
+                        </div>
 
-            <label for="edit_users">Editar Noticies</label>
-            <input type="checkbox" name="edit_news" id="edit_news">
+                        <div>
+                            <label for="edit_news">Editar Noticies</label>
+                            <input type="checkbox" name="edit_news" id="edit_news">
+                        </div>
 
-            <label for="edit_users">Editar Ossos</label>
-            <input type="checkbox" name="edit_bone_files" id="edit_bone_files">
+                        <div>
+                            <label for="edit_bone_files">Editar Ossos</label>
+                            <input type="checkbox" name="edit_bone_files" id="edit_bone_files">
+                        </div>
+                    <!-- </div> -->
 
-            <label for="status">Estat</label>
-            <select name="status" id="status">
-                <option value="1">Actiu</option>
-                <option value="0">Deshabilitat</option>
-            </select>
+                <div class="div-inputs">
+                    <label for="status">Estat</label>
+                    <select name="status" id="status">
+                        <option value="1">Actiu</option>
+                        <option value="0">Deshabilitat</option>
+                    </select>
+                </div>
 
-            <button id="btn-crear-usuari">Crear</button>
-
-        </form>
+                <button id="btn-crear-usuari">Crear</button>
+            </form>
+        </div>
 
 
 
@@ -154,10 +175,11 @@
         <button id="default-values">Restaurar valors</button>
     </aside>
 
-    <script src="../JS/menu.js"></script>
-    <script src="../JS/accesibility.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/accesibility.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>  
     <script type="module" src="../js/users.js"></script>
+    <script type="module" src="../js/crear_usuari.js"></script>
 </body>
 </html>

@@ -1,7 +1,9 @@
  
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
- import { getFirestore, collection, doc, getDocs ,setDoc,onSnapshot,deleteDoc } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js';  
+ import { getFirestore, collection, doc, getDocs ,setDoc,onSnapshot,deleteDoc } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js';
+ import { getAuth } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
 
  // TODO: Add SDKs for Firebase products that you want to use
  // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,6 +23,8 @@
 
  const db = getFirestore();
 
+ const auth = getAuth(app);
+
  export const saveNews = async (id,news_title,autor,news_date,news_content,news_cover,status)=> {
     try {
       console.log(news_content);
@@ -39,7 +43,7 @@
 }
 
 export {
-  onSnapshot,collection,db
+  onSnapshot,collection,db,auth
 }
 
 export const getNews = async ()=> {
@@ -51,7 +55,7 @@ export const getNews = async ()=> {
     await deleteDoc(doc(db,"news",newsToDelete));
   }
 
-  export const saveUsers = async (id,name,email,password,salt,edit_users,edit_news,edit_bone_files,active, is_first_log_in)=> {
+  export const saveUser = async (id,name,email,password,salt,edit_users,edit_news,edit_bone_files,active, is_first_log_in)=> {
     try {
      
         await setDoc(doc(db, "users", id), {
@@ -69,4 +73,17 @@ export const getNews = async ()=> {
       } catch(error) {
         console.log("Error saving user with custom ID:", error)
       }
+}
+
+
+export const createUserWithEmailAndPassword = async (auth, email, password) => {
+  try {
+    const user = await userCredential.user;
+    console.log("USer saved with auth");
+    } catch(error) {
+      const errorCode = error.code;
+  const errorMessage = error.message;
+  console.log("Error saving user with auth", error);
+    }
+
 }
