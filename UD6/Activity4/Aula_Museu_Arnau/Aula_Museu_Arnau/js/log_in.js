@@ -1,4 +1,14 @@
-let users = JSON.parse(localStorage.getItem("users"));
+import { saveUser,onSnapshot,collection,db } from "./firebase.js";
+import {generarSalt,encryptPassword} from "./users.js";
+let users = [];
+onSnapshot(collection(db,"users"),  (querySnapshot)=> {
+    users = [];
+    querySnapshot.forEach((doc) => {
+       users.push([doc.id,doc.data()]);
+    })
+ 
+ }) 
+
 let inputEmail = $("#email");
 let inputPassword = $("#password");
 let form = $("form");
@@ -34,8 +44,9 @@ function emailComprobation(inputEmail) {
     if(esEmailValid(inputEmail.val()) == true) {    
             
         $.each(users ,function (index,user) {
-
-            if(inputEmail.val() === user.email) {
+            console.log(user)
+            console.log(user[1].email)
+            if(inputEmail.val() === user[1].email) {
                 inputEmail.removeClass("incorrecte");
                 inputEmail.addClass("correcte");
                 console.log("email correcte");
@@ -68,9 +79,9 @@ function comparePasswords(password) {
 
     $.each(users,function (index,user){
        
-    let encryptedInput = encryptPassword(password,user.salt);
+    let encryptedInput = encryptPassword(password,user[1].salt);
 
-        if(encryptedInput === user.password) {
+        if(encryptedInput === user[1].password) {
             
             console.log("Contrasenya correcte");
             passwordMatch = true;
@@ -80,7 +91,7 @@ function comparePasswords(password) {
            
             console.log("Contrasenya incorrecte");
             console.log(encryptedInput);
-            console.log(user.password);
+            console.log(user[1].password);
             
         };
     });
@@ -111,24 +122,25 @@ $(()=> {
     form.on("submit" , (e)=> {
         e.preventDefault();
   
-        if(repeated_password.val().length != 0) {
+        if(repeated_password.val().length > 0) {
             if(repeated_password.val().length >= 12 && validPassword(inputPassword.val()) == true) {
                 if(repeated_password.val() == inputPassword.val()) {
 
                     let salt = generarSalt();
                     let changedPassword = encryptPassword(inputPassword.val(),salt);
 
-                    user_loged.password = changedPassword;
-                    user_loged.salt = salt;
-                    user_loged.is_first_login = 0;
+                    user_loged[1].password = changedPassword;
+                    user_loged[1].salt = salt;
+                    user_loged[1].is_first_login = 0;
 
                     $.each(users,function (index,user){
-                        if(user.id == user_loged.id) {
+                        if(+user[0] == user_loged[0]) {
                             console.log(user);
-                            user = user_loged;
+                            // user[1] = user_loged;
                             console.log(user);
 
-                            localStorage.setItem("users", JSON.stringify(users));
+                            // localStorage.setItem("users", JSON.stringify(users));
+                            saveUser(user_loged[0] +"",user_loged[1].name,user_loged[1].email,user_loged[1].password,user_loged[1].salt,user_loged[1].edit_users,user_loged[1].edit_news,user_loged[1].edit_bone_files,user_loged[1].active,user_loged[1].is_first_login)
 
                             return false;
                         }
@@ -147,9 +159,10 @@ $(()=> {
        else if(emailComprobation(inputEmail)==true && comparePasswords(inputPassword.val()) == true) {
         console.log("login done");
 
-     
-       
-        if(repeated_password.val().length == 0 && user_loged.is_first_login == 1) {
+        console.log(user_loged)
+        console.log(repeated_password.val().length)
+       console.log( user_loged[1].is_first_log_in == 1)
+        if(repeated_password.val().length == 0 && user_loged[1].is_first_log_in == 1) {
             inputPassword.val("");
             label_repeated_password.show();
             repeated_password.show();
@@ -157,7 +170,7 @@ $(()=> {
         }else {
             $(".log-in-result").text("Login successful").addClass("correcte").removeClass("incorrecte");
             localStorage.setItem("userLoged",JSON.stringify(user_loged) )
-            setTimeout(()=>window.location.href="../pages/pagina_administracio.html",1000);
+            // setTimeout(()=>window.location.href="../pages/pagina_administracio.html",1000);
             // label_repeated_password.hide();
             // repeated_password.hide();
         }

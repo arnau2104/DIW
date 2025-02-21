@@ -76,6 +76,11 @@ export const getNews = async ()=> {
 }
 
 
+export const deleteUser = async (userToDelete)=> {
+  await deleteDoc(doc(db,"users",userToDelete));
+}
+
+
 export const createUserWithEmailAndPassword = async (auth, email, password) => {
   try {
     const user = await userCredential.user;

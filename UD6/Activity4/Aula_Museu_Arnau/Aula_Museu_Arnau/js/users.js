@@ -4,7 +4,7 @@ let userPassword = "Ramis20.";
 let encryptedPassword = encryptPassword(userPassword,salt);
  
 //generar salt 
-function generarSalt() {
+export function generarSalt() {
     return [...crypto.getRandomValues(new Uint8Array(16))]
         .map(byte => byte.toString(16).padStart(2, '0'))
         .join('');
@@ -12,7 +12,7 @@ function generarSalt() {
 
 //encriptar contrasenya
 
-function encryptPassword(userPassword,salt) {
+export function encryptPassword(userPassword,salt) {
    
    
     const hashedPassword = CryptoJS.SHA256(userPassword + salt).toString();
