@@ -32,7 +32,7 @@ $(()=>{
                           <div class="flex justify-between text-lg items-center intermidium:p-1 intermidium:px-2">
                               <i class="fa fa-user-circle-o" aria-hidden="true"> ${news.autor}</i>
                               <div>
-                              ${userLoged[1].edit_news == 1 ?                          
+                              ${userLoged && userLoged[1].edit_news == 1 ?                          
                                  ` <i class="fa fa-pencil cursor-pointer" aria-hidden="true"></i>
                                   <i class="fa fa-trash" aria-hidden="true"></i>` : ""
                               }
@@ -89,7 +89,7 @@ $(()=>{
               return html;
             }
 
-           userLoged[1].edit_news == 0 ? $('.fa-plus').remove() : '';
+           userLoged && userLoged[1].edit_news == 0 ? $('.fa-plus').remove() : '';
             printNews();
 
          
