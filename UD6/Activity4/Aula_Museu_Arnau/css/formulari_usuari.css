@@ -1,0 +1,110 @@
+.div-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+} 
+
+.div-form h1 {
+    text-align: center;
+}
+
+.form-usuari {
+    width: 100%;
+    max-width: 400px;
+    /* background-color: #FAF9F9; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.div-inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.div-inputs label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-usuari input, .form-crear-usuari select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #FAF9F9;
+}
+
+
+
+.checkbox-permisos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.checkbox-permisos div {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.checkbox-permisos div label {
+   font-weight: bold; 
+}
+
+.checkbox-permisos input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-permisos input[type="checkbox"]:checked {
+    accent-color: #001E33;
+}
+
+#btn-crear-usuari, #btn-editar-usuari {
+    width: 100%;
+    padding: 10px;
+    background-color: #001E33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#btn-crear-usuari:hover, #btn-editar-usuari:hover {
+    background-color: #00171F;
+}
+
+.fa-arrow-left {
+    float: left;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+@media screen and (min-width: 860px) {
+
+    .form-usuari {
+        max-width: 500px;
+        
+    }
+
+    .form-usuari input {
+        font-size: 15px;
+    }
+
+    #status {
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+
