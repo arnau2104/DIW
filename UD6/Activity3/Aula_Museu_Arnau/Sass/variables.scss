@@ -1,0 +1,222 @@
+$white: #FFF8F0;
+$light-white: #FAF9F9;
+$blue: #001E33;
+$black: #00171F;
+$orange: #FF8811;
+$fontFamily:Apple;
+
+@mixin upDownAnimation($duration,$iteration) {
+    @keyframes hvr-icon-hang {
+        0% {
+          -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+        }
+        50% {
+          -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+        }
+        100% {
+          -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+        }
+      }
+
+      animation: hvr-icon-hang $duration ease-in-out $iteration;
+}
+
+@mixin font-face($fontFamily) {
+@font-face {
+  font-family: $fontFamily;
+  src:url("../Assets/fonts/System\ San\ Francisco\ Display\ Regular.ttf");
+ }
+}
+
+@mixin icons ($font-size,$margin) {
+  font-size: $font-size;
+  margin: $margin;
+}
+
+@mixin grow-shadow-animation ($class,$shadow-color,$display) {
+  #{$class}:hover {
+    display: $display;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 5px $shadow-color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+  }
+  #{$class}:hover:hover, #{$class}:hover:focus, #{$class}:hover:active { 
+    box-shadow: 0 10px 10px -10px $shadow-color;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@mixin mobile-page-title() {
+  
+  
+  @media screen and (max-width: 860px){
+    .logo-pageTitle {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-pageTitle h2 {
+        padding: 8px;
+    }
+    
+    header {
+        display: flex;
+        align-items: flex-start;
+    }
+    }
+}
+
+@mixin buttonStyle($background-color,$color,$width,$height,$border-radius) {
+  background-color: $background-color; 
+  color: $color;
+  border-radius: $border-radius;
+  width: $width;
+  height: $height;
+}
+
+@mixin underline-from-center-animation($class,$color) {
+  /* Underline From Center Animatio */
+#{$class} {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+#{$class}:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: $color;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+#{$class}:hover:before, #{$class}:focus:before, #{$class}:active:before {
+  left: 0;
+  right: 0;
+}
+/*Animation end*/
+}
+
+@mixin func-dark-mode(){
+
+  background-color: $blue;
+  color: $white;
+
+  header {
+    background-color: $white;
+    color: $blue;
+
+    #page-title {
+      color: $blue;
+    }
+
+    p {
+      color: $blue;
+    }
+     .fa-user {
+      color: $blue;
+     }
+
+     .submenu {
+      a {
+        color: $blue;
+      }
+     }
+  }
+
+  main  {
+    background-color: $blue;
+    color: $white;
+    
+    button {
+      background-color: $white;
+      color: $blue;
+    }
+
+
+    .bone-description {
+      color: $blue;
+    }
+
+    .div-form {
+      background-color: $white;
+      color: $blue;
+    }
+   
+  }
+
+  footer {
+    background-color: $white;
+    color: $blue;
+  }
+
+  #accesibilityIcon {
+    color: $white;
+  }
+
+  .accesibility {
+    background-color: $blue;
+    color: $white;
+    border-color: $white;
+
+    > p{
+      background-color: $white;
+      color: $blue;
+    }
+
+    .accesibility-buttons {
+      color: $blue;
+     
+    }
+
+     .contrast-colors {
+      color: $blue;
+     }
+  }
+
+  #default-values {
+    color: $blue;
+    background-color: $white;
+  }
+ 
+}
+
+
+@mixin func-high-saturation(){
+
+   filter: saturate(200%);  
+
+}
+
+@mixin func-low-saturation() {
+  filter: saturate(60%);
+}
+
+@mixin func-grey-scale() {
+  filter: saturate(10%);
+}
+
+@mixin func-increase-header {
+  header {
+    height: auto;
+  }
+}
