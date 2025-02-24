@@ -1,5 +1,5 @@
 const salt = generarSalt();
-let userPassword = "Ramis20.";
+let userPassword = "Ramis.20";
 let encryptedPassword = encryptPassword(userPassword,salt);
  
 //generar salt 
