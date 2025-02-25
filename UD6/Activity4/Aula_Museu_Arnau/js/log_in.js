@@ -81,19 +81,25 @@ function comparePasswords(password) {
        
     let encryptedInput = encryptPassword(password,user[1].salt);
 
-        if(encryptedInput === user[1].password) {
-            
-            console.log("Contrasenya correcte");
-            passwordMatch = true;
-            user_loged = user;
-            return false;
-        }else {
+//    console.log(user[1].email , inputEmail.val());
+
+        if(user[1].email == inputEmail.val()) {
            
-            console.log("Contrasenya incorrecte");
-            console.log(encryptedInput);
-            console.log(user[1].password);
             
-        };
+            if(encryptedInput === user[1].password) {
+                
+                console.log("Contrasenya correcte");
+                passwordMatch = true;
+                user_loged = user;
+                return false;
+            }else {
+            
+                console.log("Contrasenya incorrecte");
+                console.log(encryptedInput);
+                console.log(user[1].password);
+                
+            };
+    }
     });
 
     return passwordMatch;
@@ -131,7 +137,7 @@ $(()=> {
 
                     user_loged[1].password = changedPassword;
                     user_loged[1].salt = salt;
-                    user_loged[1].is_first_login = 0;
+                    user_loged[1].is_first_log_in = 0;
 
                     $.each(users,function (index,user){
                         if(+user[0] == user_loged[0]) {
@@ -140,7 +146,7 @@ $(()=> {
                             console.log(user);
 
                             
-                            saveUser(user_loged[0] +"",user_loged[1].name,user_loged[1].email,user_loged[1].password,user_loged[1].salt,user_loged[1].edit_users,user_loged[1].edit_news,user_loged[1].edit_bone_files,user_loged[1].active,user_loged[1].is_first_login)
+                            saveUser(user_loged[0] +"",user_loged[1].name,user_loged[1].email,user_loged[1].password,user_loged[1].salt,user_loged[1].edit_users,user_loged[1].edit_news,user_loged[1].edit_bone_files,user_loged[1].active,user_loged[1].is_first_log_in)
 
                             return false;
                         }
