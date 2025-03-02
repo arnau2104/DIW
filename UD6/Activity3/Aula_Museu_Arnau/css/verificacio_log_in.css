@@ -1,0 +1,23 @@
+.correcte {
+    border-color: #2ecc71;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.incorrecte {
+    border-color: #e74c3c;
+    color: #eb2c17;
+    font-weight: bold;
+}
+
+.errorMessage {
+    color: #eb2c17;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.log-in-result {
+    margin-top: 10px;
+    font-size: 19px;
+}

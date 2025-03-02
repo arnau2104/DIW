@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post editor</title>
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/news_editor.css">
+    <link rel="stylesheet" href="../sass/common.css">
+</head>
+<body>
+
+  <header>
+    <i class="fa fa-bars mobile-menu" aria-hidden="true"></i>
+    <div class="logo-pageTitle">
+        <a href="../index.html"><img src="../assets/Imgs/logo_fosc.png" alt="logo_fosc" class="logo"></a>
+        <h2>Noticies</h2>
+        <a href="../index.html"><h1 id="page-title" class="header-pc">Aula Museu</h1></a>
+    </div>
+    <div class="user-pc-menu">
+        <div class="header-pc pc-menu">
+            <ul class="horitzontal-menu">
+            <li><a href="./historia_balena.html"><p>Història de la balena</p></a></li>
+            <li><a href="./muntatge_balena.html"><p>Muntatge de la balena</p></a></li>
+            <li><a href="./noticies.html"><p>Notícies</p></a></li>
+           <li> <a href="#" class="voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
+                <ul class="submenu"> 
+                    <li><a href="./fitxa_tecnica_ossos.html">Fitxa Tècnica</li></a>
+                    <li><a href="./altres_activitats.html">Altres Activitats</li></a>
+                </ul></li>
+           <li> <a href="./pagina_administracio.html"><p>Pàgina d'Administració</p></a></li>
+            </ul>
+        </div>
+   
+        <a href="./log_in.html"> <i class="fa fa-user" aria-hidden="true"></i></a>
+</div>
+
+</header>
+<aside id="menu-click">
+    <i class="fa fa-times close-menu" aria-hidden="true"></i>
+    <ul>
+        <a href="./historia_balena.html"><li>Historia de la ballena</li></a>
+        <a href="./muntatge_balena.html"><li>Muntatge de la balena</li></a>
+        <a href="./noticies.html"><li>Noticies</li></a>
+        <li> <a href="#" class="mobile-voltant-balena"><p>Al voltant de la balena<span><i class="fa fa-chevron-down upDown" aria-hidden="true"></i></span></p></a>
+            <ul class="mobile-submenu"> 
+                <li><a href="./fitxa_tecnica_ossos.html">Fitxa Tècnica</li></a>
+                <li><a href="./altres_activitats.html">Altres Activitats</li></a>
+            </ul></li>
+            <li> <a href="./pagina_administracio.html"><p>Pàgina d'Administració</p></a></li>
+    </ul>
+</aside>
+<main>
+  <div class="general-div">
+    <h1>Editor de Notícies</h1>
+    
+    <div class="toolbox">
+      <h3>Opcions</h3>
+      <div class="tool" data-type="paragraph">Paràgraf</div>
+      <div class="tool" data-type="image">Imatge</div>
+    </div>
+
+    <div id="builder">
+      <div class="news-title"><h2 class="edit-news-title" onclick="editTitle(this)">Escriu el títol de la notícia</h2></div>
+      <div class="news-image-principal">
+        <h2  class="image-label">Selecciona la portada de la notícia</h2>
+        <input type="file" id="image-input" accept="image/*" onchange="previewImage(this)" class="hidden-input">
+        <div class="image-preview">
+          
+        </div>
+      </div>
+      <div class="row-container"></div>
+    </div>
+    
+    <label for="column-choice">Número de columnes per fila:</label>
+    <select id="column-choice">
+      <option value="1">1 columna</option>
+      <option value="2">2 columnes</option>
+    </select>
+    <button id="add-row">Afegir Fila</button>
+    <button id="save-config">Guardar Configuració</button>
+    <button id="load-config">Cargar Configuració</button>
+    <!-- <button id="publicar">Publicar</button> -->
+    <button id="publicar" onclick="publishNews()">
+      <div class="svg-wrapper-1">
+        <div class="svg-wrapper">
+          <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="currentColor"></path>
+          </svg>
+        </div>
+      </div>
+      <span>Publicar</span>
+    </button>
+  </div>
+</main>
+<i class="fa fa-universal-access" id="accesibilityIcon" aria-hidden="true"></i>
+<footer>
+    <h3>Copyright Arnau 2024</h3>
+</footer>
+<aside class="accesibility">
+    <p>Acessibility <i class="fa fa-times" aria-hidden="true"></i>
+    </p>
+    <div class="contrast-colors"> 
+        <div class="dark-contrast accesisility-buttons">
+            <i class="fa fa-moon-o" aria-hidden="true"></i>
+            Dark Contrast         
+        </div>
+        <div class="light-contrast accesisility-buttons">
+            <i class="fa fa-sun-o" aria-hidden="true"></i>
+            Light Contrast         
+        </div>
+        <div class="high-saturation accesisility-buttons">
+            <i class="fa fa-tint" aria-hidden="true"></i>
+            High Saturation         
+        </div>
+        <div class="low-saturation accesisility-buttons">
+            <i class="fa fa-tint" aria-hidden="true"></i>
+            Low Saturation         
+        </div>
+        <div class="grey-scale accesisility-buttons">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            Gray Scale         
+        </div>
+    </div>
+
+    <div class="font-settings">     
+            <div class="font-size-slider ">
+                <h4>Font Size</h4>
+                <div>
+                    <input type="range" min="1" max="10" value = "5" id="sliderRange"><p id="rangeValue"></p>
+                </div>
+            </div>
+            <div class="line-spacing spacing">
+                <h4>Line Spacing</h4>
+                <div>
+                    <button id="spacingSmall" class=" accesisility-buttons">SMALL</button>
+                    <button id="spacingNormal" class=" accesisility-buttons">NORMAL</button>
+                    <button id="spacingLarge" class=" accesisility-buttons">LARGE</button>
+                    <button id="spacingExtraLarge" class=" accesisility-buttons">EXTRA LARGE</button>
+                </div>
+            </div>
+
+            <div class="word-spacing spacing">
+                <h4>Word Spacing</h4>
+                <div>
+                    <button id="wordSpacingSmall" class=" accesisility-buttons">SMALL</button>
+                    <button id="wordSpacingNormal" class=" accesisility-buttons">NORMAL</button>
+                    <button id="wordSpacingLarge" class=" accesisility-buttons">LARGE</button>
+                    <button id="wordSpacingExtraLarge" class=" accesisility-buttons">EXTRA LARGE</button>
+                </div>
+            </div>
+
+            <div class="word-spacing spacing">
+                <h4>Letter Spacing</h4>
+                <div>
+                    <button id="letterSpacingSmall" class=" accesisility-buttons ">SMALL</button>
+                    <button id="letterSpacingNormal" class=" accesisility-buttons">NORMAL</button>
+                    <button id="letterSpacingLarge" class=" accesisility-buttons">LARGE</button>
+                    <button id="letterSpacingExtraLarge" class=" accesisility-buttons">EXTRA LARGE</button>
+                </div>
+            </div>
+    </div>
+    <button id="default-values">Restaurar valors</button>
+</aside>
+    <script src="../js/menu.js"></script>
+    <script src="../js/accesibility.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha384-SStJQoPipVtHHnIgUfDI+jTAbSyU+HMbhwt2XRRNpLIRFg9VguopT6Y4+cdOlkqg" crossorigin="anonymous"></script>
+  <script src="../js/news_editor.js"></script>
+</body>
+</html>
